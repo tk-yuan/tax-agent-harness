@@ -109,9 +109,18 @@ def test_permission_blocks_traversal(tmp_path):
 
 
 def test_permission_blocks_absolute_outside(tmp_path):
-    p = PermissionPolicy(allowed_roots=[tmp_path / "ws"])
+    """绝对路径越界必须被挡住。
+
+    注意**不能写死 "D:/..."**：在 Linux 上那根本不是绝对路径，
+    会被当成相对路径拼到允许根下面，断言白写——CI 上就是这么挂的。
+    所以用 tmp_path 造一个真正的绝对路径，且落在允许根之外。
+    """
+    allowed = tmp_path / "ws"
+    allowed.mkdir()
+    outside = tmp_path / "outside.txt"      # 绝对路径，且在允许根之外
+    p = PermissionPolicy(allowed_roots=[allowed])
     with pytest.raises(PermissionDenied):
-        p.check_path("D:/Windows/system32/cmd.exe")
+        p.check_path(str(outside))
 
 
 def test_readonly_policy_blocks_write(tmp_path):

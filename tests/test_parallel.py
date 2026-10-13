@@ -58,17 +58,32 @@ def test_single_tool_call_does_not_use_pool():
 
 
 def test_multiple_tool_calls_run_concurrently():
-    """三个 0.3s 的工具并发跑，总耗时应接近 0.3s 而非 0.9s。"""
-    order: list = []
-    agent = Agent(_registry(order), llm=_StubLLM(3), system_prompt="s", max_turns=3)
-    t0 = time.perf_counter()
+    """三个工具应当**并发**执行，而不是串着等。
+
+    断言的是「执行区间有重叠」，不是「总耗时小于某个值」——
+    后者依赖机器快慢，CI 上容易假报警。重叠才是并发的定义。
+    """
+    spans: list[tuple[float, float]] = []
+
+    def slow(tag: int):
+        t0 = time.perf_counter()
+        time.sleep(DELAY)
+        spans.append((t0, time.perf_counter()))
+        return {"tag": tag}
+
+    reg = ToolRegistry()
+    reg.register(Tool(name="slow", description="慢工具", parameters={"type": "object"},
+                      handler=slow))
+
+    agent = Agent(reg, llm=_StubLLM(3), system_prompt="s", max_turns=3)
     r = agent.run("go")
-    elapsed = time.perf_counter() - t0
 
     assert r.stop_reason == "completed"
-    assert len(order) == 3
-    # 串行需 0.9s；并发应明显低于此。给足余量避免 CI 抖动。
-    assert elapsed < DELAY * 2, f"耗时 {elapsed:.2f}s，看起来是串行执行的"
+    assert len(spans) == 3
+    spans.sort()
+    # 第二个在第一个结束之前就开始了 → 确实并发
+    assert spans[1][0] < spans[0][1], f"执行区间无重叠，看起来是串行：{spans}"
+    assert spans[2][0] < spans[0][1], f"执行区间无重叠，看起来是串行：{spans}"
 
 
 def test_results_keep_call_order():
