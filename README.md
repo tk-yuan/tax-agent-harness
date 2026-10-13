@@ -258,11 +258,20 @@ Agent 想调 submit_plan
 - **Workflow 不允许模型提交代码**：模型只能给流程名、参数和续跑 id。
   否则这就是一个远程代码执行漏洞。
 
+## 文档
+
+| 文档 | 内容 |
+|---|---|
+| [docs/DESIGN.md](docs/DESIGN.md) | **设计取舍**：每个模块为什么这么做、替代方案是什么、代价在哪 |
+| [docs/LEARNING.md](docs/LEARNING.md) | **学习指南**：按面试问题组织——「上下文压缩怎么做的」「记忆凭什么算记忆」 |
+| [docs/GLOSSARY.md](docs/GLOSSARY.md) | **术语速查**：简历/代码里每个词的三段式（是什么 → 为什么用它 → 面试怎么答） |
+| [regression/scenarios.jsonl](regression/scenarios.jsonl) | 回归场景：把完整执行链路写成可断言的用例 |
+
 ## 测试
 
 ```bash
-python -m pytest tests/ -q
-```
+python -m pytest tests/ -q          # 108 个单元测试
+python scripts/run_regression.py    # 3 个端到端回归场景（真实完整运行，耗时）
 
 覆盖：工具池权限收窄、Hook 的拒绝语义与异常处理、路径越界拦截、
 任务依赖阻塞、记忆衰减/强化/淘汰、压缩的组边界安全。
