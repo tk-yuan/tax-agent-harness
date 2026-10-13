@@ -1,5 +1,9 @@
 # 企业税负优化 Agent Harness
 
+[![CI](https://github.com/tk-yuan/tax-agent-harness/actions/workflows/ci.yml/badge.svg)](https://github.com/tk-yuan/tax-agent-harness/actions/workflows/ci.yml)
+![tests](https://img.shields.io/badge/tests-108%20passed-brightgreen)
+![python](https://img.shields.io/badge/python-3.13-blue)
+
 > 一个**从零手写**的多智能体运行时：任务规划、子 Agent 委派、上下文压缩、
 > 可插拔中间件、Skills 渐进披露、分层记忆、执行链路追踪。
 >

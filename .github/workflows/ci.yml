@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+
+      - name: 安装依赖
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt pytest
+
+      - name: 单元测试
+        # 全部测试均为离线用例（模型调用走桩、检索不联网），不需要任何 API key。
+        # 这是刻意保证的：CI 一旦依赖外部服务，就没人会去维护它。
+        run: python -m pytest tests/ -q
+
+      - name: 装配冒烟
+        # 不起服务、不调模型，只验证「所有零件能拼起来、工具接线没断」。
+        # 本项目踩过工具名对得上但参数名对不上的坑，这一步就是拦它的。
+        run: |
+          python -c "
+          import sys; sys.path.insert(0, 'src')
+          from taxharness.assemble import build_harness
+          b = build_harness()
+          print('工具', len(b['registry'].names()), '| 技能', len(b['skills'].skills),
+                '| 子 Agent', len(b['runner'].specs), '| MCP', len(b['mcp_tools']))
+          "
