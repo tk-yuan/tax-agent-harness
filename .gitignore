@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.env
+.venv/
+venv/
+
+# 运行时产物
+.cache/
+traces/
+workspace/
+
+.vscode/
+.idea/
+.DS_Store

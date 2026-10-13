@@ -1,0 +1,8 @@
+{
+ "one_time_unit_max": 5000000.0,
+ "one_time_year_from": 2024,
+ "one_time_year_to": 2027,
+ "sme_income_max": 3000000.0,
+ "sme_employee_max": 300.0,
+ "sme_assets_max": 50000000.0
+}

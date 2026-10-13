@@ -1,0 +1,17 @@
+# 运行时依赖——没有 Agent 框架
+httpx>=0.28,<1          # 模型调用与向量服务
+numpy>=2.0,<3           # 检索内核的向量运算
+python-dotenv>=1.2,<2   # 读 .env
+
+# 服务层（FastAPI + ASGI）
+fastapi>=0.115,<1
+uvicorn>=0.30,<1
+pydantic>=2.0,<3
+sse-starlette>=3.0,<4   # 可选：本项目用原生 StreamingResponse 实现 SSE，未强依赖
+
+# 开发
+# pytest>=8
+
+# 对比一下：如果用 LangGraph 搭同样的东西，依赖会是
+# langgraph + langchain-core + langchain-community + ... 以及它们背后的一整棵依赖树。
+# 本项目要交付的恰恰是框架替你做的那些部分，所以不用它。

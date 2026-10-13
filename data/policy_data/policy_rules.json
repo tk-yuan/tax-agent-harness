@@ -1,0 +1,129 @@
+[
+  {
+    "id": "SME_CIT_2023_12",
+    "name": "小型微利企业企业所得税优惠",
+    "tax_type": "企业所得税",
+    "effective_from": "2023-01-01",
+    "effective_to": "2027-12-31",
+    "eligibility": {
+      "annual_taxable_income_max_yuan": 3000000,
+      "employees_max": 300,
+      "total_assets_max_yuan": 50000000,
+      "excluded_industries": "国家限制和禁止行业"
+    },
+    "formula": "应纳税所得额 × 25% × 20% = 应纳税所得额 × 5%",
+    "relation": "与高新技术企业15%税率优惠不可同时适用于同一所得；与定期减免税优惠不可叠加",
+    "note": "判定以年度汇算清缴数据为准；应纳税所得额、从业人数、资产总额三项指标同时满足方可享受",
+    "source": "财政部 税务总局公告2023年第12号",
+    "source_url": "https://www.gov.cn/zhengce/zhengceku/202308/content_6895468.htm"
+  },
+  {
+    "id": "RD_SUPER_2023_7",
+    "name": "研发费用税前加计扣除",
+    "tax_type": "企业所得税",
+    "effective_from": "2023-01-01",
+    "effective_to": null,
+    "eligibility": {
+      "resident_enterprise": true,
+      "accounting_sound": true,
+      "audit_collection": true,
+      "excluded_industries": ["烟草制造业", "住宿和餐饮业", "批发和零售业", "房地产业", "租赁和商务服务业", "娱乐业"]
+    },
+    "formula": "未形成无形资产计入当期损益的：按实际发生额100%加计扣除；形成无形资产的：按无形资产成本200%在税前摊销（摊销年限一般不低于10年）",
+    "relation": "与设备一次性扣除等据实扣除项目可叠加；加计扣除部分减少应纳税所得额",
+    "note": "须有真实、合规归集的研发支出，不得虚构研发活动",
+    "source": "财政部 税务总局公告2023年第7号",
+    "source_url": "https://www.gov.cn/zhengce/zhengceku/202303/content_6949542.htm"
+  },
+  {
+    "id": "EQUIP_ONETIME_2023_37",
+    "name": "设备、器具一次性税前扣除",
+    "tax_type": "企业所得税",
+    "effective_from": "2024-01-01",
+    "effective_to": "2027-12-31",
+    "eligibility": {
+      "new_equipment": true,
+      "unit_value_max_yuan": 5000000,
+      "exclude_buildings": true,
+      "purchase_in_period": true
+    },
+    "formula": "符合条件的新购进设备器具，允许在投入使用月份的次月所属年度一次性计入当期成本费用扣除；企业可自主选择放弃一次性扣除而按正常折旧处理，但一经选择不得追溯变更",
+    "relation": "与正常折旧互斥（同一资产只能择一）；与研发费用加计扣除、加速折旧互斥（同一资产不得重复享受）",
+    "source": "财政部 税务总局公告2023年第37号",
+    "source_url": "https://www.gov.cn/zhengce/zhengceku/202309/content_6902070.htm"
+  },
+  {
+    "id": "ACCEL_DEP_2014_75",
+    "name": "固定资产加速折旧",
+    "tax_type": "企业所得税",
+    "effective_from": "2014-01-01",
+    "effective_to": null,
+    "eligibility": {
+      "new_equipment": true,
+      "industry": "生物药品制造业、专用设备制造业、铁路船舶航空航天等运输设备制造业、计算机通信和其他电子设备制造业、仪器仪表制造业、信息传输软件和信息技术服务业，及财税〔2015〕106号扩围行业",
+      "or_purpose": "所有行业企业新购进专门用于研发的仪器、设备"
+    },
+    "formula": "可缩短折旧年限（最低不得低于法定最低折旧年限的60%）或采取双倍余额递减法、年数总和法",
+    "relation": "与设备一次性扣除互斥（同一资产只能择一）",
+    "source": "财税〔2014〕75号；财税〔2015〕106号",
+    "source_url": "https://www.gov.cn/gongbao/content/2014/content_2775320.htm"
+  },
+  {
+    "id": "HNTECH_15",
+    "name": "高新技术企业15%优惠税率",
+    "tax_type": "企业所得税",
+    "effective_from": "2008-01-01",
+    "effective_to": null,
+    "eligibility": {
+      "certificate_required": "取得高新技术企业证书且在有效期内"
+    },
+    "formula": "减按15%的税率征收企业所得税",
+    "relation": "与小型微利企业优惠不可同时适用（同一所得择一）；与研发费用加计扣除可叠加",
+    "source": "《中华人民共和国企业所得税法》第二十八条第二款",
+    "source_url": "https://www.gov.cn/ziliao/flfg/2007-03/19/content_554243.htm"
+  },
+  {
+    "id": "TECH_TRANSFER",
+    "name": "技术转让所得减免",
+    "tax_type": "企业所得税",
+    "effective_from": "2008-01-01",
+    "effective_to": null,
+    "eligibility": {
+      "resident_enterprise": true,
+      "transfer_type": "符合条件的技术转让（含技术转让、技术开发及相关技术咨询、技术服务）"
+    },
+    "formula": "一个纳税年度内，技术转让所得不超过500万元的部分免征企业所得税；超过500万元的部分减半征收企业所得税",
+    "relation": "与小型微利企业优惠不可叠加（技术转让所得单独适用本优惠）",
+    "source": "《中华人民共和国企业所得税法实施条例》第九十条",
+    "source_url": "https://www.gov.cn/zwgk/2007-12/11/content_830645.htm"
+  },
+  {
+    "id": "LOSS_CARRYFORWARD",
+    "name": "亏损结转弥补",
+    "tax_type": "企业所得税",
+    "effective_from": "2008-01-01",
+    "effective_to": null,
+    "eligibility": {
+      "general": "一般企业最长结转年限5年",
+      "extended": "具备高新技术企业或科技型中小企业资格的，最长结转年限由5年延长至10年"
+    },
+    "formula": "当期亏损可在以后年度用应纳税所得额弥补，一般不超过5年；特定资格企业不超过10年",
+    "relation": "与各项减免税优惠按顺序适用：先弥补亏损，再计算应纳税所得额",
+    "source": "《企业所得税法》第十八条；财税〔2018〕76号",
+    "source_url": "https://www.gov.cn/zhengce/zhengceku/2018-12/31/content_5443661.htm"
+  },
+  {
+    "id": "DISABLED_WAGE",
+    "name": "安置残疾人员工资加计扣除",
+    "tax_type": "企业所得税",
+    "effective_from": "2008-01-01",
+    "effective_to": null,
+    "eligibility": {
+      "disabled_employees": "依法安置残疾人员并符合规定条件"
+    },
+    "formula": "在据实扣除支付给残疾职工工资的基础上，按照支付给残疾职工工资的100%加计扣除",
+    "relation": "与研发费用加计扣除等加计扣除项目可叠加",
+    "source": "《企业所得税法》第三十条；财税〔2009〕70号",
+    "source_url": "https://www.gov.cn/zwgk/2009-04/30/content_1300138.htm"
+  }
+]

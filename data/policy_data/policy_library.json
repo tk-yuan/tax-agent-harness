@@ -1,0 +1,2430 @@
+[
+  {
+    "id": "CIT_0001",
+    "seq_in_catalog": 1,
+    "name": "扶贫捐赠支出全额扣除",
+    "issue_no": "2019年第49号",
+    "issue_no_all": [
+      "2019年第49号",
+      "2021年第18号"
+    ],
+    "category": "其他",
+    "mechanic": "其他",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": null,
+    "valid_from": 2019,
+    "valid_to": 2025,
+    "validity_type": "阶段性",
+    "validity_verified": true,
+    "conditions": [
+      "通过公益性社会组织捐赠",
+      "或县级以上政府及其组成部门",
+      "用于目标脱贫地区的扶贫捐赠支出",
+      "目标脱贫地区脱贫后可继续适用"
+    ],
+    "is_choice": false,
+    "evidence": "用于目标脱贫地区的扶贫捐赠支出，准予在计算企业所得税应纳税所得额时据实扣除。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": 2025,
+    "validity_note": "官方目录原文载明"
+  },
+  {
+    "id": "CIT_0002",
+    "seq_in_catalog": 2,
+    "name": "软件、集成电路企业优惠政策适用类型",
+    "issue_no": "2020年第45号",
+    "issue_no_all": [
+      "2020年第45号"
+    ],
+    "category": "其他",
+    "mechanic": "其他",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": null,
+    "valid_from": 2020,
+    "valid_to": null,
+    "validity_type": "兜底项",
+    "validity_verified": true,
+    "conditions": [
+      "符合原有软件、集成电路产业税收优惠政策条件",
+      "2019年（含）之前已经进入优惠期",
+      "可选择适用新出台的优惠政策"
+    ],
+    "is_choice": true,
+    "evidence": "符合原有软件、集成电路产业税收优惠政策条件且在2019年（含）之前已经进入优惠期的企业或项目，2020年（含）起可按原有政策规定继续享受至期满为止，如同时符合新出台软件、集成电路产业税收优惠政策条件的，可选择适用新出台的优惠政策。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": null,
+    "validity_note": "官方目录中的兜底条目，非具体政策，无执行期限"
+  },
+  {
+    "id": "CIT_0003",
+    "seq_in_catalog": 1,
+    "name": "取得国债利息收入免征企业所得税",
+    "issue_no": "2011年第36号",
+    "issue_no_all": [
+      "2011年第36号"
+    ],
+    "category": "免税收入",
+    "mechanic": "免税收入",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": null,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "制度性长期",
+    "validity_verified": true,
+    "conditions": [
+      "持有国务院财政部门发行的国债",
+      "取得的利息收入"
+    ],
+    "is_choice": false,
+    "evidence": "企业持有国务院财政部门发行的国债取得的利息收入为免税收入。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": null,
+    "validity_note": "《企业所得税法》第二十六条"
+  },
+  {
+    "id": "CIT_0004",
+    "seq_in_catalog": 2,
+    "name": "符合条件的居民企业之间的股息、红利等权益性投 资收益免征企业所得税",
+    "issue_no": null,
+    "issue_no_all": [],
+    "category": "免税收入",
+    "mechanic": "免税收入",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": null,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "制度性长期",
+    "validity_verified": true,
+    "conditions": [
+      "直接投资于其他居民企业",
+      "不包括连续持有上市股票不足12个月"
+    ],
+    "is_choice": true,
+    "evidence": "企业直接投资于其他居民企业取得的投资收益为免税收入，但不包括连续持有居民企业公开发行并上市流通的股票不足12个月取得的投资收益。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": null,
+    "validity_note": "《企业所得税法》第二十六条"
+  },
+  {
+    "id": "CIT_0005",
+    "seq_in_catalog": 3,
+    "name": "一般企业股息红利权益性投资收益免征企业所得 税",
+    "issue_no": null,
+    "issue_no_all": [],
+    "category": "免税收入",
+    "mechanic": "免税收入",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": null,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "制度性长期",
+    "validity_verified": true,
+    "conditions": [
+      "直接投资于其他居民企业",
+      "不包括连续持有上市流通股票不足12个月",
+      "不含H股、创新企业CDR、永续债"
+    ],
+    "is_choice": true,
+    "evidence": "企业直接投资于其他居民企业取得的投资收益为免税收入，但不包括连续持有居民企业公开发行并上市流通的股票不足12个月取得的投资收益。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": null,
+    "validity_note": "《企业所得税法》第二十六条"
+  },
+  {
+    "id": "CIT_0006",
+    "seq_in_catalog": 4,
+    "name": "通过沪港通投资 H 股满 12 个月取得的股息红利所 得免征企业所得税",
+    "issue_no": "财税〔2014〕81号",
+    "issue_no_all": [
+      "财税〔2014〕81号"
+    ],
+    "category": "免税收入",
+    "mechanic": "免税收入",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": null,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "制度性长期",
+    "validity_verified": true,
+    "conditions": [
+      "内地居民企业",
+      "通过沪港通投资",
+      "连续持有H股满12个月",
+      "取得的股息红利所得"
+    ],
+    "is_choice": false,
+    "evidence": "内地居民企业通过沪港通投资且连续持有H股满12个月取得的股息红利所得，依法免征企业所得税。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": null,
+    "validity_note": "《企业所得税法》第二十六条"
+  },
+  {
+    "id": "CIT_0007",
+    "seq_in_catalog": 5,
+    "name": "通过深港通投资 H 股满 12 个月取得的股息红利所 得免征企业所得税",
+    "issue_no": "财税〔2016〕127号",
+    "issue_no_all": [
+      "财税〔2016〕127号"
+    ],
+    "category": "免税收入",
+    "mechanic": "免税收入",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": null,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "制度性长期",
+    "validity_verified": true,
+    "conditions": [
+      "内地居民企业",
+      "通过深港通投资",
+      "连续持有H股满12个月",
+      "取得的股息红利所得"
+    ],
+    "is_choice": false,
+    "evidence": "内地居民企业通过深港通投资且连续持有H股满12个月取得的股息红利所得，依法免征企业所得税。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": null,
+    "validity_note": "《企业所得税法》第二十六条"
+  },
+  {
+    "id": "CIT_0008",
+    "seq_in_catalog": 6,
+    "name": "投资创新企业 CDR 取得的股息红利所得免征企业所 得税",
+    "issue_no": "2019年第52号",
+    "issue_no_all": [
+      "2019年第52号",
+      "2023年第22号"
+    ],
+    "category": "免税收入",
+    "mechanic": "免税收入",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": null,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "制度性长期",
+    "validity_verified": true,
+    "conditions": [
+      "企业投资者持有创新企业CDR",
+      "取得股息红利所得",
+      "按持有股票政策规定"
+    ],
+    "is_choice": false,
+    "evidence": "对企业投资者持有创新企业CDR取得5的股息红利所得，按持有股票的股息红利所得政策规定免征企业所得税。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": null,
+    "validity_note": "《企业所得税法》第二十六条"
+  },
+  {
+    "id": "CIT_0009",
+    "seq_in_catalog": 7,
+    "name": "符合条件的永续债利息收入免征企业所得税",
+    "issue_no": "2019年第64号",
+    "issue_no_all": [
+      "2019年第64号"
+    ],
+    "category": "免税收入",
+    "mechanic": "免税收入",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": null,
+    "valid_from": 2019,
+    "valid_to": null,
+    "validity_type": "制度性长期",
+    "validity_verified": true,
+    "conditions": [
+      "发行方和投资方均为居民企业",
+      "投资方取得的永续债利息收入"
+    ],
+    "is_choice": true,
+    "evidence": "发行方和投资方均为居民企业的，投资方取得的永续债利息收入可以适用企业所得税法规定的居民企业之间的股息、红利等权益性投资收益免征企业所得税规定。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": null,
+    "validity_note": "《企业所得税法》第二十六条规定的法定免税收入"
+  },
+  {
+    "id": "CIT_0010",
+    "seq_in_catalog": 8,
+    "name": "符合条件的非营利组织的收入免征企业所得税",
+    "issue_no": "财税〔2009〕122号",
+    "issue_no_all": [
+      "财税〔2009〕122号",
+      "财税〔2018〕13号"
+    ],
+    "category": "免税收入",
+    "mechanic": "免税收入",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": null,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "制度性长期",
+    "validity_verified": true,
+    "conditions": [
+      "符合条件的非营利组织",
+      "收入不包括营利性活动所得",
+      "依法认定"
+    ],
+    "is_choice": false,
+    "evidence": "符合条件的非营利组织的收入为免税收入，但不包括从事营利性活动所取得的收入。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": null,
+    "validity_note": "《企业所得税法》第二十六条"
+  },
+  {
+    "id": "CIT_0011",
+    "seq_in_catalog": 9,
+    "name": "投资者从证券投资基金分配中取得的收入免征企业 所得税",
+    "issue_no": "财税〔2008〕1号",
+    "issue_no_all": [
+      "财税〔2008〕1号"
+    ],
+    "category": "免税收入",
+    "mechanic": "免税收入",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": null,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "制度性长期",
+    "validity_verified": true,
+    "conditions": [
+      "投资者从证券投资基金分配中取得的收入"
+    ],
+    "is_choice": false,
+    "evidence": "对投资者从证券投资基金分配中取得的收入，暂不征收企业所得税。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": null,
+    "validity_note": "《企业所得税法》第二十六条规定的法定免税收入"
+  },
+  {
+    "id": "CIT_0012",
+    "seq_in_catalog": 10,
+    "name": "取得的地方政府债券利息收入免征企业所得税",
+    "issue_no": "财税〔2011〕76号",
+    "issue_no_all": [
+      "财税〔2011〕76号",
+      "财税〔2013〕5号"
+    ],
+    "category": "免税收入",
+    "mechanic": "免税收入",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": null,
+    "valid_from": 2009,
+    "valid_to": null,
+    "validity_type": "制度性长期",
+    "validity_verified": true,
+    "conditions": [
+      "企业取得地方政府债券利息收入",
+      "债券为2009-2011年或2012年及以后发行"
+    ],
+    "is_choice": false,
+    "evidence": "企业取得2009年、2010年和2011年发行的地方政府债券利息所得，2012年及以后年度发行的地方政府债券利息收入，免征企业所得税。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": null,
+    "validity_note": "《企业所得税法》第二十六条规定的法定免税收入"
+  },
+  {
+    "id": "CIT_0013",
+    "seq_in_catalog": 11,
+    "name": "中国清洁发展机制基金取得的收入免征企业所得 税",
+    "issue_no": "财税〔2009〕30号",
+    "issue_no_all": [
+      "财税〔2009〕30号",
+      "财税〔2023〕44号"
+    ],
+    "category": "免税收入",
+    "mechanic": "免税收入",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": null,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "制度性长期",
+    "validity_verified": true,
+    "conditions": [
+      "中国清洁发展机制基金取得",
+      "CDM项目减排量转让收入上缴国家部分",
+      "国际金融组织赠款收入",
+      "存款利息、国债利息收入",
+      "国内外机构组织个人捐赠收入"
+    ],
+    "is_choice": false,
+    "evidence": "中国清洁发展机制基金取得的CDM项目温室气体减排量转让收入上缴国家的部分；国际金融组织赠款收入；基金资金的存款利息收入、购买国债的利息收入；国内外机构、组织和个人的捐赠收入免征企业所得税。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": null,
+    "validity_note": "《企业所得税法》第二十六条规定的法定免税收入"
+  },
+  {
+    "id": "CIT_0014",
+    "seq_in_catalog": 13,
+    "name": "中国奥委会取得北京冬奥组委支付的收入免征企 业所得税",
+    "issue_no": "财税〔2017〕60号",
+    "issue_no_all": [
+      "财税〔2017〕60号"
+    ],
+    "category": "免税收入",
+    "mechanic": "免税收入",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": null,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "制度性长期",
+    "validity_verified": true,
+    "conditions": [
+      "按《联合市场开发计划协议》规定",
+      "按《主办城市合同》规定",
+      "由北京冬奥组委分期支付的收入",
+      "按比例支付的盈余分成收入"
+    ],
+    "is_choice": false,
+    "evidence": "中国奥委会取得的由北京冬奥组委分期支付的收入、按比例支付的盈余分成收入免征企业所得税。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": null,
+    "validity_note": "《企业所得税法》第二十六条规定的法定免税收入"
+  },
+  {
+    "id": "CIT_0015",
+    "seq_in_catalog": 14,
+    "name": "中国残奥委会取得北京冬奥组委分期支付的收入 免征企业所得税",
+    "issue_no": "财税〔2017〕60号",
+    "issue_no_all": [
+      "财税〔2017〕60号"
+    ],
+    "category": "免税收入",
+    "mechanic": "免税收入",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": null,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "制度性长期",
+    "validity_verified": true,
+    "conditions": [
+      "中国残奥委会取得",
+      "根据《联合市场开发计划协议》",
+      "由北京冬奥组委分期支付"
+    ],
+    "is_choice": false,
+    "evidence": "对中国残奥委会根据《联合市场开发计划协议》取得的由北京冬奥组委分期支付的收入免征企业所得税。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": null,
+    "validity_note": "《企业所得税法》第二十六条规定的法定免税收入"
+  },
+  {
+    "id": "CIT_0016",
+    "seq_in_catalog": 15,
+    "name": "取得的基础研究收入免征企业所得税",
+    "issue_no": "2022年第32号",
+    "issue_no_all": [
+      "2022年第32号"
+    ],
+    "category": "免税收入",
+    "mechanic": "免税收入",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": null,
+    "valid_from": 2022,
+    "valid_to": null,
+    "validity_type": "制度性长期",
+    "validity_verified": true,
+    "conditions": [
+      "非营利性科研机构或高等学校",
+      "接收基础研究资金收入"
+    ],
+    "is_choice": false,
+    "evidence": "对非营利性科学技术研究开发机构、高等学校接收企业、个人和其他组织机构基础研究资金收入，免征企业所得税。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": null,
+    "validity_note": "《企业所得税法》第二十六条规定的法定免税收入"
+  },
+  {
+    "id": "CIT_0017",
+    "seq_in_catalog": 16,
+    "name": "其他免税收入类未列明优惠（减免税代码： ）",
+    "issue_no": null,
+    "issue_no_all": [],
+    "category": "其他",
+    "mechanic": "其他",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": null,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "兜底项",
+    "validity_verified": true,
+    "conditions": [
+      "未列明的其他免税收入优惠事项"
+    ],
+    "is_choice": true,
+    "evidence": "企业可填报未列明的其他免税收入优惠事项的免税收入金额。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": null,
+    "validity_note": "官方目录中的兜底条目，非具体政策，无执行期限"
+  },
+  {
+    "id": "CIT_0018",
+    "seq_in_catalog": 1,
+    "name": "取得铁路债券利息收入减半征收企业所得税",
+    "issue_no": "2023年第64号",
+    "issue_no_all": [
+      "2023年第64号"
+    ],
+    "category": "减计收入",
+    "mechanic": "减计收入",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": 0.5,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "制度性长期",
+    "validity_verified": true,
+    "conditions": [
+      "持有铁路建设债券等特定企业债券",
+      "取得利息收入"
+    ],
+    "is_choice": false,
+    "evidence": "对企业持有铁路建设债券、铁路债券等特定企业债券取得的利息收入，减半征收企业所得税。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": null,
+    "validity_note": "《企业所得税法》第二十六条规定的法定免税收入"
+  },
+  {
+    "id": "CIT_0019",
+    "seq_in_catalog": 2,
+    "name": "取得的社区家庭服务收入在计算应纳税所得额时减\n\n计收入",
+    "issue_no": "2019年第76号",
+    "issue_no_all": [
+      "2019年第76号"
+    ],
+    "category": "减计收入",
+    "mechanic": "减计收入",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": 0.9,
+    "valid_from": null,
+    "valid_to": 2025,
+    "validity_type": "阶段性",
+    "validity_verified": true,
+    "conditions": [
+      "为社区提供养老、托育、家政等服务",
+      "提供社区养老、托育、家政服务取得的收入"
+    ],
+    "is_choice": false,
+    "evidence": "至2025年12月31日，为社区提供养老、托育、家政等服务的机构，提供社区养老、托育、家政服务取得的收入，在10计算应纳税所得额时，减按90%计入收入总额。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": 2025,
+    "validity_note": "官方目录原文载明"
+  },
+  {
+    "id": "CIT_0020",
+    "seq_in_catalog": 3,
+    "name": "综合利用资源生产产品取得的收入在计算应纳税所 得额时减计收入",
+    "issue_no": "财税〔2008〕47号",
+    "issue_no_all": [
+      "财税〔2008〕47号",
+      "2021年第36号"
+    ],
+    "category": "减计收入",
+    "mechanic": "减计收入",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": 0.9,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "制度性长期",
+    "validity_verified": true,
+    "conditions": [
+      "以目录规定资源为主要原材料",
+      "生产国家非限制和禁止产品",
+      "符合国家和行业相关标准"
+    ],
+    "is_choice": false,
+    "evidence": "企业以《资源综合利用企业所得税优惠目录（2021年版）》规定的资源作为主要原材料，生产国家非限制和禁止并符合国家和行业相关标准的产品取得的收入，减按90%计入收入总额。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": null,
+    "validity_note": "财税〔2008〕47号，未设到期日"
+  },
+  {
+    "id": "CIT_0021",
+    "seq_in_catalog": 4,
+    "name": "金融机构取得的涉农贷款利息收入在计算应纳税所 得额时减计收入",
+    "issue_no": "2023年第55号",
+    "issue_no_all": [
+      "2023年第55号",
+      "2023年第55号"
+    ],
+    "category": "减计收入",
+    "mechanic": "减计收入",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": 0.9,
+    "valid_from": null,
+    "valid_to": 2027,
+    "validity_type": "阶段性",
+    "validity_verified": true,
+    "conditions": [
+      "金融机构农户小额贷款利息收入",
+      "保险公司种植业养殖业保费收入"
+    ],
+    "is_choice": false,
+    "evidence": "对金融机构农户小额贷款的利息收入，在计算应纳税所得额时，按90%计入收入总额。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": 2027,
+    "validity_note": "官方目录原文载明"
+  },
+  {
+    "id": "CIT_0022",
+    "seq_in_catalog": 6,
+    "name": "小额贷款公司取得的农户小额贷款利息收入在计算 应纳税所得额时减计收入",
+    "issue_no": "2023年第54号",
+    "issue_no_all": [
+      "2023年第54号"
+    ],
+    "category": "减计收入",
+    "mechanic": "减计收入",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": 0.9,
+    "valid_from": null,
+    "valid_to": 2027,
+    "validity_type": "阶段性",
+    "validity_verified": true,
+    "conditions": [
+      "经省级金融管理部门批准成立",
+      "小额贷款公司",
+      "农户小额贷款利息收入",
+      "单笔且贷款余额总额10万元以下"
+    ],
+    "is_choice": false,
+    "evidence": "对经省级金融管理部门（金融办、局等）批准成立的小额贷款公司取得的农户小额贷款利息收入，在计算应纳税所得额时，按90%计入收入总额。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": 2027,
+    "validity_note": "官方目录原文载明"
+  },
+  {
+    "id": "CIT_0023",
+    "seq_in_catalog": 7,
+    "name": "其他减计收入类未列明优惠（减免税代码： ）",
+    "issue_no": null,
+    "issue_no_all": [],
+    "category": "其他",
+    "mechanic": "其他",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": null,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "兜底项",
+    "validity_verified": true,
+    "conditions": [
+      "未列明的其他减计收入优惠事项"
+    ],
+    "is_choice": true,
+    "evidence": "企业可填报未列明的其他减计收入优惠事项的减计收入金12额。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": null,
+    "validity_note": "官方目录中的兜底条目，非具体政策，无执行期限"
+  },
+  {
+    "id": "CIT_0024",
+    "seq_in_catalog": 1,
+    "name": "企业开发新技术、新产品、新工艺发生的研究开发\n\n费用加计扣除（集成电路和工业母机企业按 120%加计扣除）",
+    "issue_no": "财税〔2015〕119号",
+    "issue_no_all": [
+      "财税〔2015〕119号",
+      "2015年第97号"
+    ],
+    "category": "加计扣除",
+    "mechanic": "加计扣除",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": 1.2,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "制度性长期",
+    "validity_verified": true,
+    "conditions": [
+      "集成电路企业或工业母机企业",
+      "开展研发活动实际发生研发费用",
+      "未形成无形资产计入当期损益"
+    ],
+    "is_choice": true,
+    "evidence": "集成电路企业和工业母机企业开展研发活动中实际发生的研发费用，未形成无形资产计入当期损益的，在按规定据实扣除的基础上，再按照实际发生额的120%在税前加计扣除",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": null,
+    "validity_note": "财政部明确表述『作为制度性安排长期实施』（2023年第7号）"
+  },
+  {
+    "id": "CIT_0025",
+    "seq_in_catalog": 2,
+    "name": "企业开发新技术、新产品、新工艺发生的研究开发 费用加计扣除（按 100%加计扣除）",
+    "issue_no": "财税〔2015〕119号",
+    "issue_no_all": [
+      "财税〔2015〕119号",
+      "2015年第97号"
+    ],
+    "category": "加计扣除",
+    "mechanic": "加计扣除",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": 1.0,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "制度性长期",
+    "validity_verified": true,
+    "conditions": [
+      "企业开展研发活动中实际发生的研发费用",
+      "未形成无形资产计入当期损益的",
+      "在按规定据实扣除的基础上"
+    ],
+    "is_choice": true,
+    "evidence": "企业开展研发活动中实际发生的研发费用，未形成无形资产计入当期损益的，在按规定据实扣除的基础上，再按照实际发生额的100%在税前加计扣除",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": null,
+    "validity_note": "财政部明确表述『作为制度性安排长期实施』（2023年第7号）"
+  },
+  {
+    "id": "CIT_0026",
+    "seq_in_catalog": 4,
+    "name": "企业为获得创新性、创意性、突破性的产品进行 创意设计活动发生的相关费用加计扣除（按 100%加计扣除）",
+    "issue_no": "财税〔2015〕119号",
+    "issue_no_all": [
+      "财税〔2015〕119号",
+      "2023年第7号"
+    ],
+    "category": "加计扣除",
+    "mechanic": "加计扣除",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": 1.0,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "制度性长期",
+    "validity_verified": true,
+    "conditions": [
+      "为获得创新性、创意性、突破性的产品",
+      "进行创意设计活动发生的相关费用",
+      "按规定据实扣除基础上加计"
+    ],
+    "is_choice": true,
+    "evidence": "企业为获得创新性、创意性、突破性的产品进行创意设计活动而发生的相关费用，在按规定据实扣除的基础上，再按实际发生额的100%加计扣除。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": null,
+    "validity_note": "加计扣除类政策均为《企业所得税法》及财政部公告确立的制度性安排"
+  },
+  {
+    "id": "CIT_0027",
+    "seq_in_catalog": 5,
+    "name": "企业投入基础研究支出加计扣除（按 100%加计扣 除）",
+    "issue_no": "2022年第32号",
+    "issue_no_all": [
+      "2022年第32号"
+    ],
+    "category": "加计扣除",
+    "mechanic": "加计扣除",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": 1.0,
+    "valid_from": 2022,
+    "valid_to": null,
+    "validity_type": "制度性长期",
+    "validity_verified": true,
+    "conditions": [
+      "出资给非营利性科研机构",
+      "出资给高等学校",
+      "出资给政府性自然科学基金",
+      "用于基础研究"
+    ],
+    "is_choice": true,
+    "evidence": "在计算应纳税所得额时可按实际发生额在税前扣除，并可按100%在税前加计扣除。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": null,
+    "validity_note": "加计扣除类政策均为《企业所得税法》及财政部公告确立的制度性安排"
+  },
+  {
+    "id": "CIT_0028",
+    "seq_in_catalog": 6,
+    "name": "安置残疾人员所支付的工资加计扣除",
+    "issue_no": "财税〔2009〕70号",
+    "issue_no_all": [
+      "财税〔2009〕70号"
+    ],
+    "category": "加计扣除",
+    "mechanic": "加计扣除",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": 1.0,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "制度性长期",
+    "validity_verified": true,
+    "conditions": [
+      "安置残疾人员",
+      "支付给残疾职工工资"
+    ],
+    "is_choice": true,
+    "evidence": "按照支付给残疾职工工资的100%加计扣除",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": null,
+    "validity_note": "加计扣除类政策均为《企业所得税法》及财政部公告确立的制度性安排"
+  },
+  {
+    "id": "CIT_0029",
+    "seq_in_catalog": 7,
+    "name": "其他加计扣除类未列明优惠",
+    "issue_no": null,
+    "issue_no_all": [],
+    "category": "加计扣除",
+    "mechanic": "加计扣除",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": null,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "制度性长期",
+    "validity_verified": true,
+    "conditions": [
+      "未列明的其他加计扣除优惠事项"
+    ],
+    "is_choice": true,
+    "evidence": "企业可填报未列明的其他加计扣除优惠事项的加计扣除金额。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": null,
+    "validity_note": "加计扣除类政策均为《企业所得税法》及财政部公告确立的制度性安排"
+  },
+  {
+    "id": "CIT_0030",
+    "seq_in_catalog": 1,
+    "name": "从事农、林、牧、渔业项目的所得减免征收企业所\n\n得税（免税项目）",
+    "issue_no": "财税〔2008〕149号",
+    "issue_no_all": [
+      "财税〔2008〕149号",
+      "国税函〔2009〕779号"
+    ],
+    "category": "免税收入",
+    "mechanic": "免税收入",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": null,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "制度性长期",
+    "validity_verified": true,
+    "conditions": [
+      "从事农、林、牧、渔业项目",
+      "不包括国家限制和禁止发展的项目",
+      "项目所得大于0",
+      "多个项目应分别核算"
+    ],
+    "is_choice": false,
+    "evidence": "企业从事农、林、牧、渔业项目的所得，可以免征、减征企业所得税，不包括企业从事国家限制和禁止发展的项目。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": null,
+    "validity_note": "《企业所得税法》第二十六条规定的法定免税收入"
+  },
+  {
+    "id": "CIT_0031",
+    "seq_in_catalog": 3,
+    "name": "从事国家重点扶持的公共基础设施项目（除农村饮 水工程）投资经营的所得定期减免企业所得税",
+    "issue_no": "财税〔2008〕46号",
+    "issue_no_all": [
+      "财税〔2008〕46号",
+      "财税〔2008〕116号"
+    ],
+    "category": "所得减免",
+    "mechanic": "所得减免",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": null,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "制度性长期",
+    "validity_verified": true,
+    "conditions": [
+      "从事公共基础设施项目投资经营",
+      "项目属优惠目录范围",
+      "不包括农村饮水安全工程",
+      "不包括承包经营建设所得",
+      "不包括内部自建自用所得",
+      "自取得第一笔生产经营收入年度起"
+    ],
+    "is_choice": false,
+    "evidence": "自项目取得第一笔生产经营收入所属纳税年度起，第一年至第三年免征企业所得税，第四年至第六年减半征收企业所得税。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": null,
+    "validity_note": "《企业所得税法实施条例》第八十七条（三免三减半）"
+  },
+  {
+    "id": "CIT_0032",
+    "seq_in_catalog": 4,
+    "name": "从事农村饮水工程新建项目投资经营的所得定期 减免企业所得税",
+    "issue_no": "2019年第67号",
+    "issue_no_all": [
+      "2019年第67号",
+      "2021年第6号"
+    ],
+    "category": "所得减免",
+    "mechanic": "所得减免",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": null,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "制度性长期",
+    "validity_verified": true,
+    "conditions": [
+      "农村饮水安全工程运营管理单位",
+      "从事饮水工程新建项目投资经营",
+      "项目属公共基础设施优惠目录",
+      "自取得第一笔生产经营收入年度起"
+    ],
+    "is_choice": false,
+    "evidence": "自项目取得第一笔生产经营收入所属纳税年度起，第一年至第三年免征企业所得税，第四年至第六年减半征收企业所得税。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": null,
+    "validity_note": "《企业所得税法实施条例》规定的项目所得减免（三免三减半等）"
+  },
+  {
+    "id": "CIT_0033",
+    "seq_in_catalog": 5,
+    "name": "从事符合条件的环境保护、节能节水项目的所得定 期减免企业所得税",
+    "issue_no": "财税〔2012〕10号",
+    "issue_no_all": [
+      "财税〔2012〕10号",
+      "2021年第36号"
+    ],
+    "category": "所得减免",
+    "mechanic": "所得减免",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": null,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "制度性长期",
+    "validity_verified": true,
+    "conditions": [
+      "从事符合条件的环境保护、节能节水项目",
+      "自项目取得第一笔生产经营收入所属纳税年度起",
+      "第一年至第三年免征企业所得税",
+      "第四年至第六年减半征收企业所得税"
+    ],
+    "is_choice": false,
+    "evidence": "企业从事符合条件的环境保护、节能节水项目的所得，自项目取得第一笔生产经营收入所属纳税年度起，第一年至第三年免征企业所得税，第四年至第六年减半征收企业所得税。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": null,
+    "validity_note": "《企业所得税法实施条例》第八十八条（三免三减半）"
+  },
+  {
+    "id": "CIT_0034",
+    "seq_in_catalog": 7,
+    "name": "符合条件的中关村国家自主创新示范区特定区域 技术转让项目所得减免征收企业所得税",
+    "issue_no": "财税〔2020〕61号",
+    "issue_no_all": [
+      "财税〔2020〕61号",
+      "财税〔2009〕30号"
+    ],
+    "category": "所得减免",
+    "mechanic": "所得减免",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": 0.5,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "制度性长期",
+    "validity_verified": true,
+    "conditions": [
+      "中关村特定区域内注册居民企业",
+      "转让专利等所有权或使用权",
+      "一个纳税年度内所得",
+      "关联方持股100%可享受"
+    ],
+    "is_choice": true,
+    "evidence": "在中关村国家自主创新示范区特定区域内注册的居民企业将其拥有的专利（含国防专利）、计算机软件著作权、集成电路布图设计专有权、植物新品种权、生物医药新品种，以及财政部和国家税务总局确定的其他技术的所有权或3年以上（含3年）非独占许可使用权和全球独占许可使用权转让取得的所得，在一个纳税年26度内，不超过2000万元的部分，免征企业所得税；超过2000万元的部分，减半征收企业所得税。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": null,
+    "validity_note": "《企业所得税法实施条例》第九十条"
+  },
+  {
+    "id": "CIT_0035",
+    "seq_in_catalog": 9,
+    "name": "符合条件的节能服务公司实施合同能源管理项目 的所得定期减免企业所得税",
+    "issue_no": "财税〔2010〕110号",
+    "issue_no_all": [
+      "财税〔2010〕110号",
+      "2013年第77号"
+    ],
+    "category": "所得减免",
+    "mechanic": "所得减免",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": null,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "制度性长期",
+    "validity_verified": true,
+    "conditions": [
+      "符合条件的节能服务公司",
+      "实施合同能源管理项目",
+      "符合企业所得税法有关规定"
+    ],
+    "is_choice": false,
+    "evidence": "对符合条件的节能服务公司实施合同能源管理项目，符合企业所得税法有关规定的，自项目取得第一笔生产经营收入所属纳税年度起，第一年至第三年免征企业所得税，第四年至第六年按照25%的法定税率减半征收企业所得税。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": null,
+    "validity_note": "财税〔2010〕110号，未设到期日"
+  },
+  {
+    "id": "CIT_0036",
+    "seq_in_catalog": 10,
+    "name": "线宽小于 65 纳米（含）或投资额超过 150 亿元的 集成电路生产项目（原）的所得减免企业所得税",
+    "issue_no": "财税〔2018〕27号",
+    "issue_no_all": [
+      "财税〔2018〕27号",
+      "财税〔2016〕49号"
+    ],
+    "category": "所得减免",
+    "mechanic": "所得减免",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": null,
+    "valid_from": 2018,
+    "valid_to": null,
+    "validity_type": "阶段性",
+    "validity_verified": true,
+    "conditions": [
+      "线宽小于65纳米或投资额超150亿元",
+      "2018年1月1日以后投资新设",
+      "经营期在15年以上"
+    ],
+    "is_choice": false,
+    "evidence": "2018年1月1日以后投资新设的集成电路线宽小于65纳米或投资额超过150亿元，且经营期在15年以上的集成电路生产项目，自项目取得第一笔生产经营收入所属纳税年度起，第一年至第五年免征企业所得税，第六年至第十年按照25%的法定税率减半征收企业所得税。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": 2020,
+    "validity_note": "财政部公告2020年第45号：自2020-01-01起按条件享受优惠期（5—10年）"
+  },
+  {
+    "id": "CIT_0037",
+    "seq_in_catalog": 13,
+    "name": "国家鼓励的线宽小于 130 纳米（含）的集成电路\n生产项目的所得减免企业所得税",
+    "issue_no": "2020年第45号",
+    "issue_no_all": [
+      "2020年第45号",
+      "发改高技〔2021〕413号"
+    ],
+    "category": "所得减免",
+    "mechanic": "所得减免",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": 0.5,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "阶段性",
+    "validity_verified": true,
+    "conditions": [
+      "国家鼓励的线宽小于130纳米（含）",
+      "经营期在10年以上",
+      "自取得第一笔生产经营收入所属纳税年度起",
+      "第一年至第二年免征",
+      "第三年至第五年减半征收"
+    ],
+    "is_choice": true,
+    "evidence": "国家鼓励的线宽小于130纳米（含），且经营期在10年以上的集成电路生产项目，自项目取得第一笔生产经营收入所属纳税年度起，第一年至第二年免征企业所得税，第三年至第五年按照25%的法定税率减半征收企业所得税。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": 2020,
+    "validity_note": "财政部公告2020年第45号：自2020-01-01起按条件享受优惠期（5—10年）"
+  },
+  {
+    "id": "CIT_0038",
+    "seq_in_catalog": 1,
+    "name": "符合条件的小型微利企业减免企业所得税",
+    "issue_no": "2022年第13号",
+    "issue_no_all": [
+      "2022年第13号",
+      "2023年第6号"
+    ],
+    "category": "减免所得税额",
+    "mechanic": "优惠税率",
+    "applies_to": "应纳税额",
+    "rate_or_factor": 0.2,
+    "valid_from": null,
+    "valid_to": 2027,
+    "validity_type": "阶段性",
+    "validity_verified": true,
+    "conditions": [
+      "符合小型微利企业条件",
+      "减按25%计算应纳税所得额"
+    ],
+    "is_choice": false,
+    "evidence": "对小型微利企业减按25%计算应纳税所得额，按20%的税率缴纳企业所得税。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": 2027,
+    "validity_note": "官方目录原文载明"
+  },
+  {
+    "id": "CIT_0039",
+    "seq_in_catalog": 2,
+    "name": "国家需要重点扶持的高新技术企业减按 15%的税率 征收企业所得税",
+    "issue_no": "财税〔2011〕47号",
+    "issue_no_all": [
+      "财税〔2011〕47号",
+      "国科发火〔2016〕32号"
+    ],
+    "category": "减免所得税额",
+    "mechanic": "优惠税率",
+    "applies_to": "应纳税额",
+    "rate_or_factor": 0.15,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "制度性长期",
+    "validity_verified": true,
+    "conditions": [
+      "国家需要重点扶持的高新技术企业"
+    ],
+    "is_choice": false,
+    "evidence": "国家需要重点扶持的高新技术企业减按15%的税率征收企业所得税。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": null,
+    "validity_note": "《企业所得税法》第二十八条第二款"
+  },
+  {
+    "id": "CIT_0040",
+    "seq_in_catalog": 3,
+    "name": "经济特区和上海浦东新区新设立的高新技术企业在 区内取得的所得定期减免企业所得税",
+    "issue_no": "国发〔2007〕40号",
+    "issue_no_all": [
+      "国发〔2007〕40号"
+    ],
+    "category": "所得减免",
+    "mechanic": "所得减免",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": null,
+    "valid_from": 2008,
+    "valid_to": null,
+    "validity_type": "制度性长期",
+    "validity_verified": true,
+    "conditions": [
+      "经济特区和上海浦东新区内",
+      "2008年1月1日（含）之后完成登记注册",
+      "国家需要重点扶持的高新技术企业",
+      "在区内取得的所得"
+    ],
+    "is_choice": false,
+    "evidence": "经济特区和上海浦东新区内2008年1月1日（含）之后完成登记注册的国家需要重点扶持的高新技术企业，在经济特区和上海浦东新区内取得的所得，自取得第一笔生产经营收入所属纳税年度起，第一年至第二年免征企业所得税，第三年至第五年按照25%法定税率减半征收企业所得税。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": null,
+    "validity_note": "《企业所得税法》第二十八条第二款"
+  },
+  {
+    "id": "CIT_0041",
+    "seq_in_catalog": 4,
+    "name": "国家鼓励的线宽小于 28 纳米（含）集成电路生产 企业减免企业所得税",
+    "issue_no": "2020年第45号",
+    "issue_no_all": [
+      "2020年第45号",
+      "发改37高技〔2021〕413号"
+    ],
+    "category": "免税收入",
+    "mechanic": "免税收入",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": null,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "制度性长期",
+    "validity_verified": true,
+    "conditions": [
+      "国家鼓励的集成电路生产企业",
+      "线宽小于28纳米（含）",
+      "经营期在15年以上",
+      "自获利年度起第一年至第十年"
+    ],
+    "is_choice": false,
+    "evidence": "国家鼓励的集成电路线宽小于28纳米（含），且经营期在15年以上的集成电路生产企业，自获利年度起，第一年至第十年免征企业所得税。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": null,
+    "validity_note": "《企业所得税法》第二十六条规定的法定免税收入"
+  },
+  {
+    "id": "CIT_0042",
+    "seq_in_catalog": 5,
+    "name": "国家鼓励的线宽小于 65 纳米（含）集成电路生产 企业减免企业所得税",
+    "issue_no": "2020年第45号",
+    "issue_no_all": [
+      "2020年第45号",
+      "发改高技〔2021〕413号"
+    ],
+    "category": "所得减免",
+    "mechanic": "所得减免",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": null,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "阶段性",
+    "validity_verified": true,
+    "conditions": [
+      "国家鼓励的集成电路生产企业",
+      "线宽小于65纳米（含）",
+      "经营期在15年以上"
+    ],
+    "is_choice": false,
+    "evidence": "国家鼓励的集成电路线宽小于65纳米（含），且经营期在15年以上的集成电路生产企业，自获利年度起，第一年至第38五年免征企业所得税，第六年至第十年按照25%的法定税率减半征收企业所得税。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": 2020,
+    "validity_note": "财政部公告2020年第45号：自2020-01-01起按条件享受优惠期（5—10年）"
+  },
+  {
+    "id": "CIT_0043",
+    "seq_in_catalog": 6,
+    "name": "国家鼓励的线宽小于 130 纳米（含）集成电路生产 企业减免企业所得税",
+    "issue_no": "2020年第45号",
+    "issue_no_all": [
+      "2020年第45号",
+      "发改高技〔2021〕413号"
+    ],
+    "category": "所得减免",
+    "mechanic": "所得减免",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": null,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "阶段性",
+    "validity_verified": true,
+    "conditions": [
+      "国家鼓励的集成电路生产企业",
+      "线宽小于130纳米（含）",
+      "经营期在10年以上"
+    ],
+    "is_choice": true,
+    "evidence": "国家鼓励的集成电路线宽小于130纳米（含），且经营期在10年以上的集成电路生产企业，自获利年度起，第一年至第二年免征企业所得税，第三年至第五年按照25%的法定税率减半征收企业所得税。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": 2020,
+    "validity_note": "财政部公告2020年第45号：自2020-01-01起按条件享受优惠期（5—10年）"
+  },
+  {
+    "id": "CIT_0044",
+    "seq_in_catalog": 7,
+    "name": "国家鼓励的集成电路设计企业减免企业所得税",
+    "issue_no": "2020年第45号",
+    "issue_no_all": [
+      "2020年第45号",
+      "2021年第9号"
+    ],
+    "category": "所得减免",
+    "mechanic": "所得减免",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": null,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "阶段性",
+    "validity_verified": true,
+    "conditions": [
+      "国家鼓励的集成电路设计企业",
+      "自获利年度起"
+    ],
+    "is_choice": false,
+    "evidence": "国家鼓励的集成电路设计企业，自获利年度起，第一年至第二年免征企业所得税，第三年至第五年按照25%的法定税率减半征收企业所得税。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": 2020,
+    "validity_note": "财政部公告2020年第45号：自2020-01-01起按条件享受优惠期（5—10年）"
+  },
+  {
+    "id": "CIT_0045",
+    "seq_in_catalog": 8,
+    "name": "国家鼓励的重点集成电路设计企业减免企业所得 税",
+    "issue_no": "2020年第45号",
+    "issue_no_all": [
+      "2020年第45号",
+      "发改高技〔2021〕413号"
+    ],
+    "category": "减免所得税额",
+    "mechanic": "优惠税率",
+    "applies_to": "应纳税额",
+    "rate_or_factor": 0.1,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "阶段性",
+    "validity_verified": true,
+    "conditions": [
+      "国家鼓励的重点集成电路设计企业",
+      "自获利年度起第一年至第五年免征",
+      "接续年度减按10%税率征收"
+    ],
+    "is_choice": false,
+    "evidence": "国家鼓励的重点集成电路设计企业，自获利年度起，第一年至第五年免征企40业所得税，接续年度减按10%的税率征收企业所得税。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": 2020,
+    "validity_note": "财政部公告2020年第45号：自2020-01-01起按条件享受优惠期（5—10年）"
+  },
+  {
+    "id": "CIT_0046",
+    "seq_in_catalog": 9,
+    "name": "国家鼓励的集成电路装备企业减免企业所得税",
+    "issue_no": "2020年第45号",
+    "issue_no_all": [
+      "2020年第45号",
+      "2021年第9号"
+    ],
+    "category": "所得减免",
+    "mechanic": "所得减免",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": null,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "阶段性",
+    "validity_verified": true,
+    "conditions": [
+      "国家鼓励的集成电路装备企业",
+      "自获利年度起"
+    ],
+    "is_choice": false,
+    "evidence": "国家鼓励的集成电路装备企业，自获利年度起，第一年至第二年免征企业所得税，第三年至第五年按照25%的法定税率减半征收企业所得税。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": 2020,
+    "validity_note": "财政部公告2020年第45号：自2020-01-01起按条件享受优惠期（5—10年）"
+  },
+  {
+    "id": "CIT_0047",
+    "seq_in_catalog": 10,
+    "name": "国家鼓励的集成电路材料企业减免企业所得税",
+    "issue_no": "2020年第45号",
+    "issue_no_all": [
+      "2020年第45号",
+      "2021年第9号"
+    ],
+    "category": "所得减免",
+    "mechanic": "所得减免",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": null,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "阶段性",
+    "validity_verified": true,
+    "conditions": [
+      "国家鼓励的集成电路材料企业",
+      "自获利年度起"
+    ],
+    "is_choice": false,
+    "evidence": "国家鼓励的集成电路材料企业，自获利年度起，第一年至第二年免征企业41所得税，第三年至第五年按照25%的法定税率减半征收企业所得税。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": 2020,
+    "validity_note": "财政部公告2020年第45号：自2020-01-01起按条件享受优惠期（5—10年）"
+  },
+  {
+    "id": "CIT_0048",
+    "seq_in_catalog": 11,
+    "name": "国家鼓励的集成电路封装、测试企业减免企业所 得税",
+    "issue_no": "2020年第45号",
+    "issue_no_all": [
+      "2020年第45号",
+      "2021年第9号"
+    ],
+    "category": "所得减免",
+    "mechanic": "所得减免",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": null,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "阶段性",
+    "validity_verified": true,
+    "conditions": [
+      "国家鼓励的集成电路封装、测试企业",
+      "自获利年度起"
+    ],
+    "is_choice": false,
+    "evidence": "国家鼓励的集成电路封装、测试企业，自获利年度起，第一年至第二年免征企业所得税，第三年至第五年按照25%的法定税率减半征收企业所得税。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": 2020,
+    "validity_note": "财政部公告2020年第45号：自2020-01-01起按条件享受优惠期（5—10年）"
+  },
+  {
+    "id": "CIT_0049",
+    "seq_in_catalog": 12,
+    "name": "国家鼓励的软件企业减免企业所得税",
+    "issue_no": "2020年第45号",
+    "issue_no_all": [
+      "2020年第45号",
+      "2021年第10号"
+    ],
+    "category": "所得减免",
+    "mechanic": "所得减免",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": null,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "阶段性",
+    "validity_verified": true,
+    "conditions": [
+      "国家鼓励的软件企业",
+      "自获利年度起",
+      "第一年至第二年免征",
+      "第三年至第五年减半征收"
+    ],
+    "is_choice": false,
+    "evidence": "国家鼓励的软件企业，自获利年度起，第一年至第二年免征企业所得税，42第三年至第五年按照25%的法定税率减半征收企业所得税。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": 2020,
+    "validity_note": "财政部公告2020年第45号：自2020-01-01起按条件享受优惠期（5—10年）"
+  },
+  {
+    "id": "CIT_0050",
+    "seq_in_catalog": 13,
+    "name": "国家鼓励的重点软件企业减免企业所得税",
+    "issue_no": "2020年第45号",
+    "issue_no_all": [
+      "2020年第45号",
+      "发改高技〔2021〕413号"
+    ],
+    "category": "减免所得税额",
+    "mechanic": "优惠税率",
+    "applies_to": "应纳税额",
+    "rate_or_factor": 0.1,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "阶段性",
+    "validity_verified": true,
+    "conditions": [
+      "国家鼓励的重点软件企业",
+      "自获利年度起第一年至第五年免税",
+      "接续年度减按10%税率"
+    ],
+    "is_choice": false,
+    "evidence": "国家鼓励的重点软件企业，自获利年度起，第一年至第五年免征企业所得税，接续年度减按10%的税率征收企业所得税。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": 2020,
+    "validity_note": "财政部公告2020年第45号：自2020-01-01起按条件享受优惠期（5—10年）"
+  },
+  {
+    "id": "CIT_0051",
+    "seq_in_catalog": 14,
+    "name": "线宽小于 0.25 微米的集成电路生产企业减免企业 所得税（原）",
+    "issue_no": "财税〔2012〕27号",
+    "issue_no_all": [
+      "财税〔2012〕27号",
+      "财税〔2016〕49号"
+    ],
+    "category": "所得减免",
+    "mechanic": "所得减免",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": null,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "阶段性",
+    "validity_verified": true,
+    "conditions": [
+      "2017年12月31日前设立",
+      "线宽小于0.25微米",
+      "经营期在15年以上"
+    ],
+    "is_choice": true,
+    "evidence": "2017年12月31日前设立的集成电路线宽小于0.25微米，且经营期在15年以上的集成电路生产企业，自获利年度起计算优惠期，第一年至第五年免征企业所得税，第六年至第十年按照25%的法定税率减半征收企业所得税。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": 2020,
+    "validity_note": "财政部公告2020年第45号：自2020-01-01起按条件享受优惠期（5—10年）"
+  },
+  {
+    "id": "CIT_0052",
+    "seq_in_catalog": 15,
+    "name": "投资额超过 80 亿元的集成电路生产企业减免企业 所得税（原）",
+    "issue_no": "财税〔2012〕27号",
+    "issue_no_all": [
+      "财税〔2012〕27号",
+      "财税〔2016〕49号"
+    ],
+    "category": "所得减免",
+    "mechanic": "所得减免",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": null,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "阶段性",
+    "validity_verified": true,
+    "conditions": [
+      "2017年12月31日前设立",
+      "投资额超过80亿元",
+      "经营期在15年以上",
+      "集成电路生产企业"
+    ],
+    "is_choice": true,
+    "evidence": "2017年12月31日前设立的投资额超过80亿元，且经营期在15年以上的集成电路生产企业，自获利年度起计算优惠期，第一年至第五年免征企业所得税，第六年至第十年按照25%的法定税率减半征收企业所得税。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": 2020,
+    "validity_note": "财政部公告2020年第45号：自2020-01-01起按条件享受优惠期（5—10年）"
+  },
+  {
+    "id": "CIT_0053",
+    "seq_in_catalog": 16,
+    "name": "线宽小于 65 纳米（含）或投资额超过 150 亿元的 集成电路生产企业减免企业所得税（原）",
+    "issue_no": "财税〔2016〕49号",
+    "issue_no_all": [
+      "财税〔2016〕49号",
+      "财税〔2018〕27号"
+    ],
+    "category": "所得减免",
+    "mechanic": "所得减免",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": null,
+    "valid_from": 2018,
+    "valid_to": null,
+    "validity_type": "阶段性",
+    "validity_verified": true,
+    "conditions": [
+      "2018年1月1日后投资新设",
+      "集成电路线宽小于65纳米或投资额超150亿元",
+      "经营期在15年以上",
+      "自获利年度起计算优惠期"
+    ],
+    "is_choice": false,
+    "evidence": "2018年1月1日后投资新设的集成电路线宽小于65纳米或投资额超过150亿元，且经营期在15年以上的集成电路生产企业，自获利年度起计算优惠期，第一年至第五年免征企业所得税，第六年至第十年按照25%的法定税率减半征收企业所得税。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": 2020,
+    "validity_note": "财政部公告2020年第45号：自2020-01-01起按条件享受优惠期（5—10年）"
+  },
+  {
+    "id": "CIT_0054",
+    "seq_in_catalog": 17,
+    "name": "技术先进型服务企业（服务外包类）减按 15%的税 率征收企业所得税",
+    "issue_no": "财税〔2017〕79号",
+    "issue_no_all": [
+      "财税〔2017〕79号"
+    ],
+    "category": "减免所得税额",
+    "mechanic": "优惠税率",
+    "applies_to": "应纳税额",
+    "rate_or_factor": 0.15,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "制度性长期",
+    "validity_verified": true,
+    "conditions": [
+      "经认定的技术先进型服务企业（服务外包类）"
+    ],
+    "is_choice": false,
+    "evidence": "对经认定的技术先进型服务企业（服务外包类），减按15%的税率征收企业所得税。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": null,
+    "validity_note": "相关公告未设到期日"
+  },
+  {
+    "id": "CIT_0055",
+    "seq_in_catalog": 18,
+    "name": "技术先进型服务企业（服务贸易类）减按 15%的税 率征收企业所得税",
+    "issue_no": "财税〔2018〕44号",
+    "issue_no_all": [
+      "财税〔2018〕44号"
+    ],
+    "category": "减免所得税额",
+    "mechanic": "优惠税率",
+    "applies_to": "应纳税额",
+    "rate_or_factor": 0.15,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "制度性长期",
+    "validity_verified": true,
+    "conditions": [
+      "经认定的技术先进型服务企业（服务贸易类）"
+    ],
+    "is_choice": false,
+    "evidence": "对经认定的技术先进型服务企业（服务贸易类），减按15%的税率征收企业所得税。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": null,
+    "validity_note": "相关公告未设到期日"
+  },
+  {
+    "id": "CIT_0056",
+    "seq_in_catalog": 19,
+    "name": "动漫企业自主开发、生产动漫产品定期减免企业 所得税",
+    "issue_no": "财税〔2009〕65号",
+    "issue_no_all": [
+      "财税〔2009〕65号",
+      "文市发〔2008〕51号"
+    ],
+    "category": "所得减免",
+    "mechanic": "所得减免",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": null,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "制度性长期",
+    "validity_verified": true,
+    "conditions": [
+      "经认定的动漫企业",
+      "自主开发、生产动漫产品"
+    ],
+    "is_choice": false,
+    "evidence": "经认定的动漫企业自主开发、生产动漫产品，享受国家现行鼓励软件产业发展的所得税优惠政策。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": null,
+    "validity_note": "相关公告未设到期日"
+  },
+  {
+    "id": "CIT_0057",
+    "seq_in_catalog": 20,
+    "name": "经营性文化事业单位转制为企业的免征企业所得 税",
+    "issue_no": "2023年第71号",
+    "issue_no_all": [
+      "2023年第71号",
+      "2024年第20号"
+    ],
+    "category": "免税收入",
+    "mechanic": "免税收入",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": null,
+    "valid_from": null,
+    "valid_to": 2027,
+    "validity_type": "阶段性",
+    "validity_verified": true,
+    "conditions": [
+      "从事新闻出版、广播影视和文化艺术的事业单位转制为企业",
+      "自转制注册之日起五年内免征企业所得税",
+      "2022年12月31日前转制为企业的，自转制注册之日起至2027年12月31日免征"
+    ],
+    "is_choice": false,
+    "evidence": "从事新闻出版、广播影视和文化艺术的事业单47位转制为企业，自转制注册之日起五年内免征企业所得税。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": 2027,
+    "validity_note": "官方目录原文载明"
+  },
+  {
+    "id": "CIT_0058",
+    "seq_in_catalog": 21,
+    "name": "符合条件的生产和装配伤残人员专门用品企业免 征企业所得税",
+    "issue_no": "2023年第57号",
+    "issue_no_all": [
+      "2023年第57号"
+    ],
+    "category": "免税收入",
+    "mechanic": "免税收入",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": null,
+    "valid_from": null,
+    "valid_to": 2027,
+    "validity_type": "阶段性",
+    "validity_verified": true,
+    "conditions": [
+      "生产和装配伤残人员专门用品",
+      "符合条件的企业"
+    ],
+    "is_choice": false,
+    "evidence": "至2027年12月31日，符合条件的生产和装配伤残人员专门用品的企业免征企业所得税。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": 2027,
+    "validity_note": "官方目录原文载明"
+  },
+  {
+    "id": "CIT_0059",
+    "seq_in_catalog": 24,
+    "name": "新疆困难地区新办企业定期减免企业所得税",
+    "issue_no": "财税〔2021〕27号",
+    "issue_no_all": [
+      "财税〔2021〕27号",
+      "财税〔2011〕53号"
+    ],
+    "category": "所得减免",
+    "mechanic": "所得减免",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": null,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "阶段性",
+    "validity_verified": true,
+    "conditions": [
+      "在新疆困难地区新办",
+      "属于优惠目录范围内企业",
+      "自取得第一笔生产经营收入所属纳税年度起"
+    ],
+    "is_choice": false,
+    "evidence": "自取得第一笔生产经营收入所属纳税年度起，第一年至第二年免征企业所得税，第三年至第五年按25%的法定税率减半征收企业所得税。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": 2025,
+    "validity_note": "财税〔2021〕27号：执行期限见公告"
+  },
+  {
+    "id": "CIT_0060",
+    "seq_in_catalog": 25,
+    "name": "新疆喀什、霍尔果斯特殊经济开发区新办企业定 期免征企业所得税",
+    "issue_no": "财税〔2021〕27号",
+    "issue_no_all": [
+      "财税〔2021〕27号",
+      "财税〔2011〕112号"
+    ],
+    "category": "免税收入",
+    "mechanic": "免税收入",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": null,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "制度性长期",
+    "validity_verified": true,
+    "conditions": [
+      "喀什、霍尔果斯特殊经济开发区内新办",
+      "属于优惠目录范围内企业",
+      "自取得第一笔生产经营收入年度起五年内"
+    ],
+    "is_choice": false,
+    "evidence": "对在新疆喀什、霍尔果斯两个特殊经济开发区内新办的属于《新疆困难地区重点鼓励发展产业企业所得税优惠目录》范围内的企业，自取得第一笔生产经营收入所属纳税年度起，五年内免征企业所得税。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": null,
+    "validity_note": "《企业所得税法》第二十六条规定的法定免税收入"
+  },
+  {
+    "id": "CIT_0061",
+    "seq_in_catalog": 26,
+    "name": "上海自贸试验区临港新片区的重点产业企业减按 15%的税率征收企业所得税",
+    "issue_no": "财税〔2020〕38号",
+    "issue_no_all": [
+      "财税〔2020〕38号"
+    ],
+    "category": "减免所得税额",
+    "mechanic": "优惠税率",
+    "applies_to": "应纳税额",
+    "rate_or_factor": 0.15,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "阶段性",
+    "validity_verified": true,
+    "conditions": [
+      "新片区内从事集成电路等关键领域",
+      "核心环节相关产品（技术）业务",
+      "开展实质性生产或研发活动",
+      "符合条件的法人企业",
+      "自设立之日起5年内"
+    ],
+    "is_choice": false,
+    "evidence": "自设立之日起5年内减按15%的税率征收企业所得税。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": 2025,
+    "validity_note": "财税〔2020〕38号：执行期限见公告"
+  },
+  {
+    "id": "CIT_0062",
+    "seq_in_catalog": 27,
+    "name": "海南自由贸易港鼓励类企业减按 15%税率征收企业 所得税",
+    "issue_no": "财税〔2020〕31号",
+    "issue_no_all": [
+      "财税〔2020〕31号",
+      "财税〔2025〕3号"
+    ],
+    "category": "减免所得税额",
+    "mechanic": "优惠税率",
+    "applies_to": "应纳税额",
+    "rate_or_factor": 0.15,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "阶段性",
+    "validity_verified": true,
+    "conditions": [
+      "注册在海南自由贸易港",
+      "实质性运营",
+      "鼓励类产业企业"
+    ],
+    "is_choice": false,
+    "evidence": "对注册在海南自由贸易港并实质性运营的鼓励类产业企业，减按15%的税率征收企业所得税。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": 2027,
+    "validity_note": "财税〔2025〕3号（延续）：至2027年12月31日"
+  },
+  {
+    "id": "CIT_0063",
+    "seq_in_catalog": 28,
+    "name": "福建平潭综合实验区鼓励类产业企业减按 15%税率 征收企业所得税",
+    "issue_no": "财税〔2021〕29号",
+    "issue_no_all": [
+      "财税〔2021〕29号"
+    ],
+    "category": "减免所得税额",
+    "mechanic": "优惠税率",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": 0.15,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "阶段性",
+    "validity_verified": true,
+    "conditions": [
+      "设在福建平潭综合实验区",
+      "属于鼓励类产业企业",
+      "区外机构所得不适用"
+    ],
+    "is_choice": false,
+    "evidence": "对设在福建平潭综合实验区的鼓励类产业企业减按15%的税率征收企业所得税。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": 2025,
+    "validity_note": "财政部 税务总局关于延续实施平潭综合实验区企业所得税优惠政策的通知"
+  },
+  {
+    "id": "CIT_0064",
+    "seq_in_catalog": 29,
+    "name": "深圳前海深港现代服务业合作区鼓励类产业企业 减按 15%税率征收企业所得税",
+    "issue_no": "财税〔2021〕30号",
+    "issue_no_all": [
+      "财税〔2021〕30号"
+    ],
+    "category": "减免所得税额",
+    "mechanic": "优惠税率",
+    "applies_to": "应纳税额",
+    "rate_or_factor": 0.15,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "阶段性",
+    "validity_verified": true,
+    "conditions": [
+      "设在深圳前海深港现代服务业合作区",
+      "鼓励类产业企业",
+      "仅就设在优惠区域内的机构所得适用"
+    ],
+    "is_choice": false,
+    "evidence": "对设在深圳前海深港现代服务业合作区的鼓励类产业企业减按15%的税率征收企业所得税。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": 2027,
+    "validity_note": "延续实施公告：至2027年12月31日"
+  },
+  {
+    "id": "CIT_0065",
+    "seq_in_catalog": 30,
+    "name": "横琴粤澳深度合作区鼓励类产业企业减按 15%税率 征收企业所得税",
+    "issue_no": "财税〔2022〕19号",
+    "issue_no_all": [
+      "财税〔2022〕19号"
+    ],
+    "category": "减免所得税额",
+    "mechanic": "优惠税率",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": 0.15,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "阶段性",
+    "validity_verified": true,
+    "conditions": [
+      "设在横琴粤澳深度合作区",
+      "符合条件的产业企业",
+      "仅就设在优惠区域内的机构所得"
+    ],
+    "is_choice": false,
+    "evidence": "对设在横琴粤澳深度合作区符合条件的产业企业减按15%的税率征收企业所得税。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": 2025,
+    "validity_note": "财税〔2022〕19号：执行至2025-12-31（已有延续政策）"
+  },
+  {
+    "id": "CIT_0066",
+    "seq_in_catalog": 31,
+    "name": "南沙先行启动区鼓励类产业企业减按 15%税率征收 企业所得税",
+    "issue_no": "财税〔2022〕40号",
+    "issue_no_all": [
+      "财税〔2022〕40号"
+    ],
+    "category": "减免所得税额",
+    "mechanic": "优惠税率",
+    "applies_to": "应纳税额",
+    "rate_or_factor": 0.15,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "阶段性",
+    "validity_verified": true,
+    "conditions": [
+      "设在南沙先行启动区",
+      "符合条件的鼓励类产业企业",
+      "仅限优惠区域内机构所得"
+    ],
+    "is_choice": false,
+    "evidence": "对设在南沙先行启动区符合条件的鼓励类产业企业，减按15%的税率征收企业所得税。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": 2026,
+    "validity_note": "财税〔2022〕40号等：2022-01-01至2026-12-31"
+  },
+  {
+    "id": "CIT_0067",
+    "seq_in_catalog": 32,
+    "name": "河套深港科技创新合作区深圳园区鼓励类产业企 业减按 15%税率征收企业所得税",
+    "issue_no": "财税〔2024〕2号",
+    "issue_no_all": [
+      "财税〔2024〕2号"
+    ],
+    "category": "减免所得税额",
+    "mechanic": "优惠税率",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": 0.15,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "阶段性",
+    "validity_verified": true,
+    "conditions": [
+      "设在河套深港科技创新合作区深圳园区特定封闭区域",
+      "符合条件的鼓励类产业企业"
+    ],
+    "is_choice": false,
+    "evidence": "对设在河套深港科技创新合作区深圳园区特定封闭区域符合条件的鼓励类产业企业，减按15%的税率征收企业所得税。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": 2027,
+    "validity_note": "河套深港科技创新合作区深圳园区企业所得税优惠政策"
+  },
+  {
+    "id": "CIT_0068",
+    "seq_in_catalog": 33,
+    "name": "北京冬奥组委、北京冬奥会测试赛赛事组委会免 征企业所得税",
+    "issue_no": "财税〔2017〕60号",
+    "issue_no_all": [
+      "财税〔2017〕60号"
+    ],
+    "category": "免税收入",
+    "mechanic": "免税收入",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": null,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "制度性长期",
+    "validity_verified": true,
+    "conditions": [
+      "北京冬奥组委",
+      "北京冬奥会测试赛赛事组委会"
+    ],
+    "is_choice": false,
+    "evidence": "对北京冬奥组委免征应缴纳的企业所得税，北京冬奥会测试赛赛事组委会取得的收入及发生的55涉税支出比照执行北京冬奥组委的税收政策。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": null,
+    "validity_note": "《企业所得税法》第二十六条规定的法定免税收入"
+  },
+  {
+    "id": "CIT_0069",
+    "seq_in_catalog": 34,
+    "name": "其他减免税额类未列明优惠（减免税代码： ）",
+    "issue_no": null,
+    "issue_no_all": [],
+    "category": "其他",
+    "mechanic": "其他",
+    "applies_to": "应纳税额",
+    "rate_or_factor": null,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "兜底项",
+    "validity_verified": true,
+    "conditions": [
+      "未列明的其他减免所得税事项"
+    ],
+    "is_choice": true,
+    "evidence": "企业可填报未列明的其他减免所得税事项的减免企业所得税金额。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": null,
+    "validity_note": "官方目录中的兜底条目，非具体政策，无执行期限"
+  },
+  {
+    "id": "CIT_0070",
+    "seq_in_catalog": 35,
+    "name": "减：项目所得额按法定税率减半征收企业所得税 叠加享受减免税优惠",
+    "issue_no": null,
+    "issue_no_all": [],
+    "category": "所得减免",
+    "mechanic": "所得减免",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": 0.5,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "制度性长期",
+    "validity_verified": true,
+    "conditions": [
+      "同时享受优惠税率和所得项目减半",
+      "项目所得按法定税率25%减半征收",
+      "同时享受小型微利企业等优惠税率",
+      "项目所得减免政策填报顺序在前"
+    ],
+    "is_choice": false,
+    "evidence": "纳税人同时享受优惠税率和所得项目减半情形下，在填报本表低税率优惠时，在本行填报所得项目按照优惠税率减半计算多享受优惠的部分。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": null,
+    "validity_note": "《企业所得税法实施条例》规定的项目所得减免（三免三减半等）"
+  },
+  {
+    "id": "CIT_0071",
+    "seq_in_catalog": 36,
+    "name": "企业招用脱贫人口就业扣减企业所得税",
+    "issue_no": "财税〔2019〕22号",
+    "issue_no_all": [
+      "财税〔2019〕22号",
+      "2021年第18号"
+    ],
+    "category": "抵免税额",
+    "mechanic": "税额抵免",
+    "applies_to": "应纳税额",
+    "rate_or_factor": null,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "阶段性",
+    "validity_verified": true,
+    "conditions": [
+      "招用脱贫人口或登记失业半年以上人员",
+      "签订1年以上期限劳动合同",
+      "依法缴纳社会保险费",
+      "定额每人每年6000元最高上浮30%",
+      "扣减增值税等后不足部分抵减所得税"
+    ],
+    "is_choice": false,
+    "evidence": "自签订劳动合同并缴纳社会保险当月起，在3年内按实际招用人数予以定额依次扣减增值税、城市维护建设税、教育费附加、地方教育附加和企业所得税优惠。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": 2025,
+    "validity_note": "财税〔2019〕22号、财税〔2019〕21号：执行至2025-12-31（已延续）"
+  },
+  {
+    "id": "CIT_0072",
+    "seq_in_catalog": 37,
+    "name": "企业招用登记失业半年以上人员就业扣减企业所 得税",
+    "issue_no": "财税〔2019〕22号",
+    "issue_no_all": [
+      "财税〔2019〕22号",
+      "2021年第18号"
+    ],
+    "category": "抵免税额",
+    "mechanic": "税额抵免",
+    "applies_to": "应纳税额",
+    "rate_or_factor": null,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "阶段性",
+    "validity_verified": true,
+    "conditions": [
+      "招用脱贫人口或登记失业半年以上人员",
+      "持《就业创业证》或《就业失业登记证》",
+      "签订1年以上劳动合同",
+      "依法缴纳社会保险费",
+      "3年内按实际招用人数定额扣减"
+    ],
+    "is_choice": false,
+    "evidence": "在3年内按实际招用人数予以定额依次扣减增值税、城市维护建设税、教育费附加、地方教育附加和企业所得税优惠。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": 2025,
+    "validity_note": "财税〔2019〕22号、财税〔2019〕21号：执行至2025-12-31（已延续）"
+  },
+  {
+    "id": "CIT_0073",
+    "seq_in_catalog": 38,
+    "name": "扶持自主就业退役士兵创业就业企业限额减征企 业所得税",
+    "issue_no": "财税〔2019〕21号",
+    "issue_no_all": [
+      "财税〔2019〕21号",
+      "2022年第4号"
+    ],
+    "category": "抵免税额",
+    "mechanic": "税额抵免",
+    "applies_to": "应纳税额",
+    "rate_or_factor": null,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "阶段性",
+    "validity_verified": true,
+    "conditions": [
+      "招用自主就业退役士兵",
+      "签订1年以上期限劳动合同",
+      "依法缴纳社会保险费",
+      "自签订劳动合同并缴纳社会保险当月起3年内",
+      "定额标准每人每年6000元最高可上浮50%"
+    ],
+    "is_choice": false,
+    "evidence": "企业招用自主就业退役士兵，与其签订1年以上期限劳动合同并依法缴纳社会保险费的，自签订劳动合同并缴纳社会保险当月起，在3年内按实际招用人数予以定额依次扣减增值税、城市维护建设税、教育费附加、地方教育附加和企业所得税优惠。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": 2025,
+    "validity_note": "财税〔2019〕22号、财税〔2019〕21号：执行至2025-12-31（已延续）"
+  },
+  {
+    "id": "CIT_0074",
+    "seq_in_catalog": 1,
+    "name": "重要行业固定资产加速折旧",
+    "issue_no": "财税〔2014〕75号",
+    "issue_no_all": [
+      "财税〔2014〕75号",
+      "财税〔2015〕106号"
+    ],
+    "category": "加速折旧摊销",
+    "mechanic": "加速折旧",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": null,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "制度性长期",
+    "validity_verified": true,
+    "conditions": [
+      "制造业企业新购进的固定资产",
+      "信息传输、软件和信息技术服务业企业新购进的固定资产"
+    ],
+    "is_choice": true,
+    "evidence": "制造业、信息传输、软件和信息技术服务业（以下简称“重要行业”）企业新购进的固定资产，可以由企业选择缩短折旧年限或采取加速折旧的方法。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": null,
+    "validity_note": "财税〔2014〕75号、财税〔2015〕106号，未设到期日"
+  },
+  {
+    "id": "CIT_0075",
+    "seq_in_catalog": 2,
+    "name": "其他行业研发设备加速折旧",
+    "issue_no": "财税〔2014〕75号",
+    "issue_no_all": [
+      "财税〔2014〕75号",
+      "财税〔2015〕106号"
+    ],
+    "category": "加速折旧摊销",
+    "mechanic": "加速折旧",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": null,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "制度性长期",
+    "validity_verified": true,
+    "conditions": [
+      "重要行业以外的其他行业企业",
+      "新购进的专门用于研发的仪器、设备",
+      "单位价值超过100万元"
+    ],
+    "is_choice": true,
+    "evidence": "重要行业以外的其他行业企业新购进的专门用于研发的仪器、设备，单位价值超过100万元的，可由企业选择缩短折旧年限或采取加速折旧的方法。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": null,
+    "validity_note": "财政部明确表述『作为制度性安排长期实施』（2023年第7号）"
+  },
+  {
+    "id": "CIT_0076",
+    "seq_in_catalog": 3,
+    "name": "海南自由贸易港企业固定资产加速折旧",
+    "issue_no": "财税〔2020〕31号",
+    "issue_no_all": [
+      "财税〔2020〕31号",
+      "财税〔2025〕3号"
+    ],
+    "category": "加速折旧摊销",
+    "mechanic": "加速折旧",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": null,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "阶段性",
+    "validity_verified": true,
+    "conditions": [
+      "在海南自由贸易港设立的企业",
+      "新购置（含自建）的固定资产",
+      "单位价值超过500万元"
+    ],
+    "is_choice": true,
+    "evidence": "在海南自由贸易港设立的企业新购置（含自建）的固定资产，单位价值超过500万元的，可缩短折旧年限或采取加速折旧的方法。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": 2027,
+    "validity_note": "财税〔2025〕3号（延续）：至2027年12月31日"
+  },
+  {
+    "id": "CIT_0077",
+    "seq_in_catalog": 4,
+    "name": "海南自由贸易港企业无形资产加速摊销",
+    "issue_no": "财税〔2020〕31号",
+    "issue_no_all": [
+      "财税〔2020〕31号",
+      "财税〔2025〕3号"
+    ],
+    "category": "加速折旧摊销",
+    "mechanic": "加速折旧",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": null,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "阶段性",
+    "validity_verified": true,
+    "conditions": [
+      "在海南自由贸易港设立的企业",
+      "新购置或自行开发的无形资产",
+      "单位价值超过500万元"
+    ],
+    "is_choice": true,
+    "evidence": "在海南自由贸易港设立的企业新购置（含自行开发）的无形资产，单位价值超过500万元的，可缩短摊销年限或采取加速摊销的方法。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": 2027,
+    "validity_note": "财税〔2025〕3号（延续）：至2027年12月31日"
+  },
+  {
+    "id": "CIT_0078",
+    "seq_in_catalog": 5,
+    "name": "横琴粤澳深度合作区企业固定资产加速折旧",
+    "issue_no": "财税〔2022〕19号",
+    "issue_no_all": [
+      "财税〔2022〕19号"
+    ],
+    "category": "加速折旧摊销",
+    "mechanic": "加速折旧",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": null,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "制度性长期",
+    "validity_verified": true,
+    "conditions": [
+      "在横琴粤澳深度合作区设立的企业",
+      "新购置（含自建）的固定资产",
+      "单位价值超过500万元"
+    ],
+    "is_choice": true,
+    "evidence": "在横琴粤澳深度合作区设立的企业新购置（含自建）的固定资产，单位价值超过500万元的，可缩短折旧年限或采取加速折旧的方法。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": null,
+    "validity_note": "财税〔2014〕75号、财税〔2015〕106号，未设到期日"
+  },
+  {
+    "id": "CIT_0079",
+    "seq_in_catalog": 6,
+    "name": "横琴粤澳深度合作区企业无形资产加速摊销",
+    "issue_no": "财税〔2022〕19号",
+    "issue_no_all": [
+      "财税〔2022〕19号"
+    ],
+    "category": "加速折旧摊销",
+    "mechanic": "加速折旧",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": null,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "阶段性",
+    "validity_verified": true,
+    "conditions": [
+      "在横琴粤澳深度合作区设立的企业",
+      "新购置或自行开发的无形资产",
+      "单位价值超过500万元"
+    ],
+    "is_choice": true,
+    "evidence": "在横琴粤澳深度合作区设立的企业新购置（含自行开发）的无形资产，单位价值超过500万元的，可缩短摊销年限或采取加速摊销的方法。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": 2025,
+    "validity_note": "财税〔2022〕19号：执行至2025-12-31（已有延续政策）"
+  },
+  {
+    "id": "CIT_0080",
+    "seq_in_catalog": 7,
+    "name": "技术进步、更新换代固定资产加速折旧",
+    "issue_no": null,
+    "issue_no_all": [],
+    "category": "加速折旧摊销",
+    "mechanic": "加速折旧",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": null,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "制度性长期",
+    "validity_verified": true,
+    "conditions": [
+      "由于技术进步",
+      "产品更新换代较快"
+    ],
+    "is_choice": true,
+    "evidence": "由于技术进步，产品更新换代较快的固定资产，可缩短折旧年限或采取加速折旧的方法。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": null,
+    "validity_note": "财税〔2014〕75号、财税〔2015〕106号，未设到期日"
+  },
+  {
+    "id": "CIT_0081",
+    "seq_in_catalog": 8,
+    "name": "常年强震动、高腐蚀固定资产加速折旧",
+    "issue_no": null,
+    "issue_no_all": [],
+    "category": "加速折旧摊销",
+    "mechanic": "加速折旧",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": null,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "制度性长期",
+    "validity_verified": true,
+    "conditions": [
+      "常年处于强震动状态",
+      "常年处于高腐蚀状态"
+    ],
+    "is_choice": true,
+    "evidence": "常年处于强震动、高腐蚀状态的固定资产，可缩短折旧年限或采取加速折旧的方法。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": null,
+    "validity_note": "财税〔2014〕75号、财税〔2015〕106号，未设到期日"
+  },
+  {
+    "id": "CIT_0082",
+    "seq_in_catalog": 9,
+    "name": "外购软件加速折旧",
+    "issue_no": "财税〔2012〕27号",
+    "issue_no_all": [
+      "财税〔2012〕27号"
+    ],
+    "category": "加速折旧摊销",
+    "mechanic": "加速折旧",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": null,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "制度性长期",
+    "validity_verified": true,
+    "conditions": [
+      "外购的软件",
+      "符合固定资产条件",
+      "按固定资产核算"
+    ],
+    "is_choice": true,
+    "evidence": "企业外购的软件，凡符合固定资产条件的，可以按照固定资产进行核算，其折旧或摊销年限可以适当缩短，最短可为2年（含）。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": null,
+    "validity_note": "财税〔2014〕75号、财税〔2015〕106号，未设到期日"
+  },
+  {
+    "id": "CIT_0083",
+    "seq_in_catalog": 10,
+    "name": "集成电路企业生产设备加速折旧",
+    "issue_no": "财税〔2012〕27号",
+    "issue_no_all": [
+      "财税〔2012〕27号"
+    ],
+    "category": "加速折旧摊销",
+    "mechanic": "加速折旧",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": null,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "制度性长期",
+    "validity_verified": true,
+    "conditions": [
+      "集成电路生产企业",
+      "生产设备",
+      "折旧年限可适当缩短",
+      "最短可为3年（含）"
+    ],
+    "is_choice": true,
+    "evidence": "集成电路生产企业的生产设备，其折旧年限可以适当缩短，66最短可为3年（含）。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": null,
+    "validity_note": "财税〔2014〕75号、财税〔2015〕106号，未设到期日"
+  },
+  {
+    "id": "CIT_0084",
+    "seq_in_catalog": 11,
+    "name": "企业外购软件加速摊销",
+    "issue_no": "财税〔2012〕27号",
+    "issue_no_all": [
+      "财税〔2012〕27号"
+    ],
+    "category": "加速折旧摊销",
+    "mechanic": "加速折旧",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": null,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "制度性长期",
+    "validity_verified": true,
+    "conditions": [
+      "企业外购的软件",
+      "符合无形资产条件",
+      "按无形资产核算",
+      "摊销年限最短可为2年（含）"
+    ],
+    "is_choice": true,
+    "evidence": "企业外购的软件，凡符合无形资产条件的，可以按照无形资产进行核算，其折旧或摊销年限可以适当缩短，最短可为2年（含）。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": null,
+    "validity_note": "相关公告未设到期日"
+  },
+  {
+    "id": "CIT_0085",
+    "seq_in_catalog": 12,
+    "name": "500 万元以下设备器具一次性扣除",
+    "issue_no": "财税〔2014〕75号",
+    "issue_no_all": [
+      "财税〔2014〕75号",
+      "财税〔2015〕106号"
+    ],
+    "category": "加速折旧摊销",
+    "mechanic": "加速折旧",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": null,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "阶段性",
+    "validity_verified": true,
+    "conditions": [
+      "企业新购进的设备、器具",
+      "单位价值不超过500万元"
+    ],
+    "is_choice": true,
+    "evidence": "企业新购进的设备、器具，单位价值不超过500万元的，允许一次性计入当期成本费用在计算应纳税所得额时扣除。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": 2027,
+    "validity_note": "财政部 税务总局公告2023年第37号：2024-01-01至2027-12-31"
+  },
+  {
+    "id": "CIT_0086",
+    "seq_in_catalog": 13,
+    "name": "海南自由贸易港企业固定资产一次性扣除",
+    "issue_no": "财税〔2020〕31号",
+    "issue_no_all": [
+      "财税〔2020〕31号",
+      "财税〔2025〕3号"
+    ],
+    "category": "其他",
+    "mechanic": "其他",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": null,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "阶段性",
+    "validity_verified": true,
+    "conditions": [
+      "在海南自由贸易港设立的企业",
+      "新购置（含自建）的固定资产",
+      "单位价值不超过500万元（含）"
+    ],
+    "is_choice": true,
+    "evidence": "在海南自由贸易港设立的企业新购置（含自建）的固定资产，单位价值不超过500万元（含）的，允许一次性计入当期成本费用在计算应纳税所得额时扣除。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": 2027,
+    "validity_note": "财税〔2025〕3号（延续）：至2027年12月31日"
+  },
+  {
+    "id": "CIT_0087",
+    "seq_in_catalog": 14,
+    "name": "海南自由贸易港企业无形资产一次性摊销",
+    "issue_no": "财税〔2020〕31号",
+    "issue_no_all": [
+      "财税〔2020〕31号",
+      "财税〔2025〕3号"
+    ],
+    "category": "加速折旧摊销",
+    "mechanic": "加速折旧",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": null,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "阶段性",
+    "validity_verified": true,
+    "conditions": [
+      "在海南自由贸易港设立的企业",
+      "新购置或自行开发的无形资产",
+      "单位价值不超过500万元（含）"
+    ],
+    "is_choice": true,
+    "evidence": "在海南自由贸易港设立的企业新购置（含自行开发）的无形资产，单位价值不超过500万元（含）的，允许一次性计入当期成本费用在计算应纳税所得额时扣除。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": 2027,
+    "validity_note": "财税〔2025〕3号（延续）：至2027年12月31日"
+  },
+  {
+    "id": "CIT_0088",
+    "seq_in_catalog": 15,
+    "name": "横琴粤澳深度合作区企业固定资产一次性扣除",
+    "issue_no": "财税〔2022〕19号",
+    "issue_no_all": [
+      "财税〔2022〕19号"
+    ],
+    "category": "其他",
+    "mechanic": "其他",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": null,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "兜底项",
+    "validity_verified": true,
+    "conditions": [
+      "在横琴粤澳深度合作区设立的企业",
+      "新购置（含自建）的固定资产",
+      "单位价值不超过500万元（含）"
+    ],
+    "is_choice": true,
+    "evidence": "在横琴粤澳深度合作区设立的企业新购置（含自建）的固定资产，单位价值不超过500万元（含）的，允许一次性计入68当期成本费用在计算应纳税所得额时扣除。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": null,
+    "validity_note": "官方目录中的兜底条目，非具体政策，无执行期限"
+  },
+  {
+    "id": "CIT_0089",
+    "seq_in_catalog": 16,
+    "name": "横琴粤澳深度合作区企业无形资产一次性摊销",
+    "issue_no": "财税〔2022〕19号",
+    "issue_no_all": [
+      "财税〔2022〕19号"
+    ],
+    "category": "加速折旧摊销",
+    "mechanic": "加速折旧",
+    "applies_to": "应纳税所得额",
+    "rate_or_factor": null,
+    "valid_from": null,
+    "valid_to": null,
+    "validity_type": "阶段性",
+    "validity_verified": true,
+    "conditions": [
+      "在横琴粤澳深度合作区设立的企业",
+      "新购置（含自行开发）的无形资产",
+      "单位价值不超过500万元（含）"
+    ],
+    "is_choice": true,
+    "evidence": "在横琴粤澳深度合作区设立的企业新购置（含自行开发）的无形资产，单位价值不超过500万元（含）的，允许一次性计入当期成本费用在计算应纳税所得额时扣除。",
+    "source": "国家税务总局《企业所得税申报事项目录》",
+    "valid_to_verified": 2025,
+    "validity_note": "财税〔2022〕19号：执行至2025-12-31（已有延续政策）"
+  }
+]
