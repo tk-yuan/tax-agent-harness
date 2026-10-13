@@ -32,6 +32,8 @@ from ..storage.store import load_checkpoint, save_checkpoint, shared_store
 class RunRecord:
     run_id: str
     goal: str
+    conversation_id: str = ""
+    turn: int = 1
     status: str = "running"        # running / awaiting_approval / completed / failed
     created: float = field(default_factory=time.time)
     finished: float = 0.0
@@ -47,6 +49,8 @@ class RunRecord:
     def to_dict(self) -> dict:
         return {
             "run_id": self.run_id,
+            "conversation_id": self.conversation_id,
+            "turn": self.turn,
             "goal": self.goal,
             "status": self.status,
             "created": self.created,
@@ -64,25 +68,68 @@ class RunRecord:
 
 
 class RunManager:
-    def __init__(self, max_runs: int = 50) -> None:
+    """任务管理 + 会话管理。
+
+    ## 会话（多轮追问）
+
+    一次对话 = 一份持续增长的消息历史。追问时把历史带上，主循环接着往下走，
+    而不是从零开始——否则"那换成 2025 年买的呢？"这种问题根本没法问。
+
+    **刻意不跨轮延续的两样东西**：
+
+      · 任务清单（board）：追问往往是新问题，沿用上一轮的任务清单会让人困惑。
+        历史消息里已经记着上一轮做了什么，需要时 Agent 自己会看。
+      · 工具缓存：追问换了参数，旧结果本来就不该命中。
+
+    **会话存在内存里**，服务重启就没了。要真持久化，把 `_conversations`
+    换成 `storage/store.py` 那个 KV 即可（接口已经在那儿了）。
+    """
+
+    def __init__(self, max_runs: int = 50, max_conversations: int = 30) -> None:
         self.runs: dict[str, RunRecord] = {}
         self._queues: dict[str, queue.Queue] = {}
         self._gates: dict[str, ApprovalGate] = {}
         self._bundles: dict[str, dict] = {}
+        self._conversations: dict[str, dict] = {}
         self._lock = threading.Lock()
         self._max_runs = max_runs
+        self._max_conversations = max_conversations
 
     # —— 生命周期 ——
-    def start(self, goal: str) -> RunRecord:
-        rec = RunRecord(run_id=f"run-{uuid.uuid4().hex[:8]}", goal=goal)
+    def start(self, goal: str, conversation_id: str | None = None) -> RunRecord:
         with self._lock:
+            cid = conversation_id or f"conv-{uuid.uuid4().hex[:8]}"
+            conv = self._conversations.setdefault(
+                cid, {"messages": [], "turns": 0, "created": time.time(),
+                      "first_goal": goal}
+            )
+            conv["turns"] += 1
+            rec = RunRecord(run_id=f"run-{uuid.uuid4().hex[:8]}", goal=goal,
+                            conversation_id=cid, turn=conv["turns"])
             self.runs[rec.run_id] = rec
             self._queues[rec.run_id] = queue.Queue()
             if len(self.runs) > self._max_runs:
                 for rid in sorted(self.runs, key=lambda r: self.runs[r].created)[: -self._max_runs]:
                     self._forget(rid)
+            if len(self._conversations) > self._max_conversations:
+                oldest = sorted(self._conversations,
+                                key=lambda c: self._conversations[c]["created"])
+                for c in oldest[: -self._max_conversations]:
+                    self._conversations.pop(c, None)
         threading.Thread(target=self._execute, args=(rec,), daemon=True).start()
         return rec
+
+    def conversation(self, cid: str) -> dict | None:
+        return self._conversations.get(cid)
+
+    def list_conversations(self) -> list[dict]:
+        return [
+            {"conversation_id": cid, "turns": c["turns"],
+             "first_goal": c["first_goal"][:80],
+             "messages": len(c["messages"]), "created": c["created"]}
+            for cid, c in sorted(self._conversations.items(),
+                                 key=lambda kv: -kv[1]["created"])
+        ]
 
     def _forget(self, run_id: str) -> None:
         self.runs.pop(run_id, None)
@@ -203,6 +250,8 @@ class RunManager:
                 {
                     "type": "start",
                     "trace_id": trace.trace_id,
+                    "conversation_id": rec.conversation_id,
+                    "turn": rec.turn,
                     "model": bundle["model"],
                     "tools": bundle["registry"].names(),
                     "skills": list(bundle["skills"].skills),
@@ -211,7 +260,21 @@ class RunManager:
                 },
             )
 
-            result = bundle["agent"].run(rec.goal)
+            # 多轮追问：把既有会话历史接上，而不是从零开始
+            conv = self._conversations.get(rec.conversation_id) or {"messages": []}
+            history = list(conv["messages"])
+            if history:
+                self._emit(rec.run_id, {"type": "resumed",
+                                        "history_messages": len(history),
+                                        "turn": rec.turn})
+
+            result = bundle["agent"].run(rec.goal, history=history)
+
+            # 存回会话，供下一轮追问接着用
+            with self._lock:
+                c = self._conversations.get(rec.conversation_id)
+                if c is not None:
+                    c["messages"] = result.messages
 
             rec.answer = result.answer
             rec.turns = result.turns
@@ -231,6 +294,8 @@ class RunManager:
                     "type": "done",
                     "status": rec.status,
                     "answer": rec.answer,
+                    "conversation_id": rec.conversation_id,
+                    "turn": rec.turn,
                     "turns": result.turns,
                     "usage": result.usage,
                     "board": rec.board,

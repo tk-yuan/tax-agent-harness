@@ -64,6 +64,7 @@ class RunResult:
     trace_id: str
     usage: dict
     state: RunState
+    messages: list[dict] = field(default_factory=list)
 
 
 class Agent:
@@ -117,10 +118,25 @@ class Agent:
         cfg.update(overrides)
         return Agent(**cfg)
 
-    def run(self, goal: str, max_turns: int | None = None) -> RunResult:
+    def run(self, goal: str, max_turns: int | None = None,
+            history: list[dict] | None = None) -> RunResult:
+        """跑一次任务。
+
+        history 传入后是**多轮追问**：在既有对话后面接上这一轮的目标，
+        而不是从零开始。不传就是独立任务（CLI 单次调用的默认行为）。
+
+        注意 system 消息由 before_model Hook 每轮重新组装（要注入记忆、
+        任务清单、技能目录），所以这里的 history 不需要带 system，
+        Hook 会补上；带了也会被覆盖成最新的。
+        """
         limit = max_turns or self.max_turns
         self.state.goal = goal
-        convo: list[dict] = [M.system(self.system_prompt), M.user(goal)]
+
+        convo: list[dict] = list(history or [])
+        if not convo or convo[0].get("role") != "system":
+            convo = [M.system(self.system_prompt)] + convo
+        convo.append(M.user(goal))
+
         answer, stop_reason, turns = "", "max_turns", 0
         # 兜底：模型每轮可能同时输出文字和工具调用。跑满轮数时，
         # 最后一次说的话就是它当时的结论——不返回空字符串，
@@ -160,9 +176,15 @@ class Agent:
                      "messages": convo, "trace": self.trace, "turn": turn},
                 )
                 if fin.get("continue"):
+                    # 续跑：把这一轮的说明也留在对话里，否则模型下一轮看不到自己的推理
+                    convo.append(M.assistant(resp["content"]))
                     convo.append(M.user(fin["reason"]))
                     continue
                 answer = fin.get("answer", resp["content"])
+                # **最终结论必须写回对话**。少了这一条，多轮追问时模型只看到
+                # 上一轮的问题、看不到它自己的回答——上下文就断了。
+                # 单次任务看不出来，一加 history 就暴露（单元测试抓到的）。
+                convo.append(M.assistant(answer))
                 stop_reason = "completed"
                 break
 
@@ -183,6 +205,7 @@ class Agent:
             trace_id=getattr(self.trace, "trace_id", ""),
             usage=self.llm.usage,
             state=self.state,
+            messages=convo,
         )
 
     # —— 内部：一次模型调用（带 trace span）——

@@ -42,6 +42,11 @@ MANAGER = RunManager()
 class RunIn(BaseModel):
     goal: str = Field(..., min_length=2, description="企业税负筹划目标")
     subagent: str | None = None
+    # 传上一轮的 conversation_id 即为「追问」：Agent 会带着既有对话继续，
+    # 而不是从零开始。不传就是一次独立任务。
+    conversation_id: str | None = Field(
+        default=None, description="会话 id；传了就接着这个会话追问"
+    )
 
 
 class ApprovalIn(BaseModel):
@@ -76,8 +81,33 @@ def tools() -> dict:
 # —— 任务 ——
 @app.post("/runs")
 def create_run(body: RunIn) -> dict:
-    rec = MANAGER.start(body.goal)
-    return {"run_id": rec.run_id, "status": rec.status}
+    rec = MANAGER.start(body.goal, conversation_id=body.conversation_id)
+    return {
+        "run_id": rec.run_id,
+        "conversation_id": rec.conversation_id,
+        "turn": rec.turn,
+        "status": rec.status,
+    }
+
+
+@app.get("/conversations")
+def list_conversations() -> dict:
+    """列出所有会话。追问靠 conversation_id 接着走。"""
+    items = MANAGER.list_conversations()
+    return {"count": len(items), "conversations": items}
+
+
+@app.get("/conversations/{cid}")
+def get_conversation(cid: str) -> dict:
+    c = MANAGER.conversation(cid)
+    if c is None:
+        raise HTTPException(404, f"未知会话 {cid}")
+    return {
+        "conversation_id": cid,
+        "turns": c["turns"],
+        "first_goal": c["first_goal"],
+        "messages": len(c["messages"]),
+    }
 
 
 @app.get("/runs")
@@ -251,7 +281,9 @@ button:hover{filter:brightness(1.08)} button:disabled{opacity:.45;cursor:default
       <input id="goal" placeholder="例如：帮 size_large_104_920008 做税负筹划，给出最优方案与节税金额"
              value="帮 size_large_104_920008 这家企业做税负筹划，给出最优方案和节税金额">
       <button id="go">运行</button>
+      <button id="new" style="background:#fff;color:#5b6472;border:1px solid var(--line)">新对话</button>
     </div>
+    <div id="conv" class="mono" style="margin:-6px 0 12px">当前：新对话（第 1 轮）</div>
     <div class="sec">执行链路（实时）</div>
     <div id="events"></div>
     <div class="sec">结论</div>
@@ -275,6 +307,24 @@ const $=id=>document.getElementById(id);
 // t0 必须初始化成当前时间：页面加载时会先拉一次 /tools 并写一条事件，
 // 那时若 t0 还是 0，时间戳会显示成 17 亿秒这种荒唐值。
 let es=null, t0=Date.now();
+// 会话：记住上一轮的 conversation_id，下一次运行就是「追问」。
+// 点「新对话」把它清掉，下一条就从零开始。
+let cid=null, turn=0;
+
+function convLabel(){
+  $('conv').textContent = cid
+    ? `当前：追问中 · 会话 ${cid} · 已进行 ${turn} 轮`
+    : '当前：新对话（第 1 轮）';
+  $('go').textContent = cid ? '追问' : '运行';
+}
+$('new').onclick=()=>{
+  cid=null; turn=0; convLabel();
+  $('goal').value=''; $('goal').focus();
+  $('events').innerHTML=''; $('answer').textContent='（新对话）';
+  $('board').innerHTML='<div class="mono">无</div>';
+  $('approvals').innerHTML='<div class="mono">无</div>';
+  if(es){ es.close(); es=null; }
+};
 
 function meta(d){
   $('meta').textContent = `工具 ${d.tools.length} · 技能 ${d.skills.length} · `
@@ -318,14 +368,18 @@ $('go').onclick=async()=>{
   $('board').innerHTML='<div class="mono">无</div>'; $('approvals').innerHTML='<div class="mono">无</div>';
   $('artifacts').innerHTML='<div class="mono">无</div>'; $('stats').innerHTML='<div class="mono">—</div>';
   $('go').disabled=true; $('status').textContent='运行中'; t0=Date.now();
+  // 有 cid 就带上 → 后端接上既有会话；没有就是新任务
+  const payload = cid ? {goal, conversation_id: cid} : {goal};
   const r=await fetch('/runs',{method:'POST',headers:{'Content-Type':'application/json'},
-    body:JSON.stringify({goal})});
-  const {run_id}=await r.json(); window.rid=run_id;
+    body:JSON.stringify(payload)});
+  const d0=await r.json();
+  window.rid=d0.run_id; cid=d0.conversation_id; turn=d0.turn||1; convLabel();
   if(es) es.close();
-  es=new EventSource(`/runs/${run_id}/events`);
+  es=new EventSource(`/runs/${window.rid}/events`);
   es.onmessage=e=>{
     const d=JSON.parse(e.data);
-    if(d.type==='start'){meta(d); ev('task','任务启动',`trace ${d.trace_id}`);}
+    if(d.type==='start'){meta(d); ev('task', d.turn>1?`第 ${d.turn} 轮追问`:'任务启动',`trace ${d.trace_id}`);}
+    else if(d.type==='resumed'){ev('task','已接上会话历史',`${d.history_messages} 条消息`);}
     else if(d.type==='span'){ev(d.kind,d.name,`${d.duration_ms}ms`);}
     else if(d.type==='event'){ev(d.kind,d.name);}
     else if(d.type==='approval_request'){approval(d.request); ev('approval','等待人工审批',d.request.tool);}
@@ -340,9 +394,12 @@ $('go').onclick=async()=>{
       $('artifacts').innerHTML=(d.artifacts||[]).length
         ? d.artifacts.map(a=>`<div class="mono">${a}</div>`).join('')
         : '<div class="mono">无</div>';
-      $('trace').innerHTML=`<a style="color:#4c6ef5" href="/traces/${d.trace_id}" target="_blank">`
+      $('trace').innerHTML=`<a style="color:#2563eb" href="/traces/${d.trace_id}" target="_blank">`
         +`${d.trace_id}.html</a>`;
-      $('go').disabled=false;
+      // 跑完把输入框清空并改成「追问」，提示可以接着问
+      $('goal').value=''; $('goal').placeholder='接着追问，例如：那如果设备是 2025 年买的呢？';
+      turn=d.turn||turn; convLabel();
+      $('go').disabled=false; $('goal').focus();
     }
     else if(d.type==='error'){$('status').textContent='失败';$('answer').textContent=d.error;$('go').disabled=false;}
   };
@@ -352,6 +409,7 @@ fetch('/tools').then(r=>r.json()).then(d=>{
   if(!$('meta').textContent.startsWith('工具')) $('meta').textContent=`工具 ${d.count} 个`;
   if(ap.length) ev('approval','需要审批的工具',ap.join(', '));
 }).catch(()=>{});
+convLabel();
 </script>
 </html>"""
 
