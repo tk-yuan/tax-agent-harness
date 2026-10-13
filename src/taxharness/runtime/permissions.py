@@ -16,10 +16,14 @@
 from __future__ import annotations
 
 import json
+import threading
 import time
 from pathlib import Path
 
 from ..config import AUDIT_LOG, FS_ALLOWED_ROOTS
+
+# 审计日志会被并发写入（一轮内多个工具调用并行执行），加锁避免行交错
+_AUDIT_LOCK = threading.Lock()
 
 
 class PermissionDenied(Exception):
@@ -27,11 +31,12 @@ class PermissionDenied(Exception):
 
 
 def audit(event: str, **fields) -> None:
-    """追加一条审计记录。"""
+    """追加一条审计记录。并发安全。"""
     rec = {"ts": time.strftime("%Y-%m-%dT%H:%M:%S"), "event": event, **fields}
+    line = json.dumps(rec, ensure_ascii=False) + "\n"
     AUDIT_LOG.parent.mkdir(parents=True, exist_ok=True)
-    with AUDIT_LOG.open("a", encoding="utf-8") as f:
-        f.write(json.dumps(rec, ensure_ascii=False) + "\n")
+    with _AUDIT_LOCK, AUDIT_LOG.open("a", encoding="utf-8") as f:
+        f.write(line)
 
 
 class PermissionPolicy:

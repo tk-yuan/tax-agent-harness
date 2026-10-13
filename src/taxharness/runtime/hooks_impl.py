@@ -22,6 +22,17 @@ from ..runtime.permissions import PermissionDenied, audit
 from ..tasks.todo import TaskBoard
 
 
+class _NullLock:
+    def __enter__(self):
+        return self
+
+    def __exit__(self, *a):
+        return False
+
+
+_NULL_LOCK = _NullLock()
+
+
 def build_hooks(
     *,
     base_prompt: str,
@@ -34,6 +45,10 @@ def build_hooks(
     budget: int = CONTEXT_BUDGET_CHARS,
     max_goal_rounds: int = 3,
     goal_checker=None,
+    tool_cache=None,
+    enable_retry: bool = True,
+    enable_pii: bool = True,
+    latency=None,
 ) -> HookManager:
     hooks = HookManager()
     spill_dir = WORKSPACE_DIR / "artifacts"
@@ -130,7 +145,10 @@ def build_hooks(
         text = result if isinstance(result, str) else json.dumps(result, ensure_ascii=False, default=str)
         summary, path = spill_tool_result(text, name, spill_dir)
         if path:
-            ctx["state"].artifacts[path] = f"{name} 的完整结果"
+            # 一轮内多个工具并发执行，写共享的 artifacts 要加锁
+            st = ctx["state"]
+            with getattr(st, "lock", _NULL_LOCK):
+                st.artifacts[path] = f"{name} 的完整结果"
             return {"result": summary}
         return None
 
@@ -184,5 +202,25 @@ def build_hooks(
                 + "\n请继续执行；确实无法完成的，说明原因后再收工。"
             ),
         }
+
+    # —— 补充中间件：缓存 / 重试 / PII / 耗时统计（对应 JD 那句「支持缓存、重试、
+    #    日志采集、PII 检测、权限校验、敏感操作拦截和审计上报」的其余几项）——
+    from .middleware import cache_hook, pii_guard_hook, retry_policy_hook  # 局部导入避免循环
+
+    if tool_cache is not None:
+        _b, _a = cache_hook(tool_cache)
+        hooks.register("before_tool", _b, "cache_lookup")
+        hooks.register("after_tool", _a, "cache_store")
+
+    if enable_retry:
+        hooks.register("before_tool", retry_policy_hook(), "retry_policy")
+
+    if enable_pii:
+        _pb, _pa = pii_guard_hook()
+        hooks.register("before_tool", _pb, "pii_guard_args")
+        hooks.register("after_tool", _pa, "pii_guard_result")
+
+    if latency is not None:
+        hooks.register("after_tool", latency.after, "latency_tracker")
 
     return hooks

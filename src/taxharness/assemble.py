@@ -7,7 +7,7 @@
 
 from __future__ import annotations
 
-from .config import DATA_DIR, MODEL, SKILLS_DIR, WORKSPACE_DIR
+from .config import DATA_DIR, MODEL, SKILLS_DIR, VIRTUAL_FS, WORKSPACE_DIR
 from .context.memory import LayeredMemory
 from .llm import LLMClient
 from .observability.trace import Trace
@@ -17,6 +17,7 @@ from .plugins.mcp import build_demo_servers
 from .plugins.workflow import WorkflowRuntime
 from .runtime.hooks_impl import build_hooks
 from .runtime.loop import Agent, RunState
+from .runtime.middleware import LatencyTracker, ToolCache
 from .runtime.permissions import PermissionPolicy
 from .runtime.tools import Tool, ToolRegistry
 from .skills.loader import SkillLibrary, register_skill_tools
@@ -40,16 +41,24 @@ MAIN_SYSTEM = """你是企业税务筹划决策 Agent。你的职责是：在**�
 
 4. **时效是红线**。任何"能不能用某项优惠"的判断，都要核实政策有效期。
 
-5. **大产出落盘**。报告、明细用 write_file 写进 workspace/，
+5. **大产出落盘**。报告、明细用 write_file 写进工作区对应的分区，
    对话里只留摘要和路径——上下文要留给推理，不是留给搬运。
    报告较长时**分节追加**（第一节用覆盖，之后每节 append=true），
    一次写太长会被截断。
+
+   工作区布局（请把文件放到对应分区，别都堆在根目录）：
+
+{fs_layout}
 
 6. **该委派就委派**。查政策、跑测算、独立复核这类可独立的子任务，
    用 task 工具交给子 Agent，只收回结论。
 
 7. **收工前自查**。任务清单没做完不许收工；完成了就如实标记。
 """
+
+# 把虚拟文件系统布局渲染进系统提示，让模型知道文件该放哪
+_FS_LAYOUT = "\n".join(f"     workspace/{k}/   —— {v}" for k, v in VIRTUAL_FS.items())
+MAIN_SYSTEM = MAIN_SYSTEM.replace("{fs_layout}", _FS_LAYOUT)
 
 
 def register_board_tool(registry: ToolRegistry, board: TaskBoard) -> None:
@@ -203,6 +212,10 @@ def build_harness(goal: str = "", trace: Trace | None = None,
         + "\n（步骤顺序固定的任务优先用 run_workflow，而不是自己一步步来）"
     )
 
+    # —— 补充中间件：缓存、耗时统计 ——
+    tool_cache = ToolCache()
+    latency = LatencyTracker()
+
     hooks = build_hooks(
         base_prompt=MAIN_SYSTEM,
         memory=memory,
@@ -212,6 +225,8 @@ def build_harness(goal: str = "", trace: Trace | None = None,
         llm=llm,
         trace=trace,
         goal_checker=goal_checker,
+        tool_cache=tool_cache,
+        latency=latency,
     )
     agent.hooks = hooks
 
@@ -219,6 +234,6 @@ def build_harness(goal: str = "", trace: Trace | None = None,
         "agent": agent, "registry": registry, "policy": policy, "board": board,
         "memory": memory, "skills": skills, "runner": runner, "llm": llm,
         "hooks": hooks, "workflows": workflows, "goal_checker": goal_checker,
-        "approval_gate": approval_gate,
+        "approval_gate": approval_gate, "cache": tool_cache, "latency": latency,
         "mcp_tools": mcp_added, "workspace": WORKSPACE_DIR, "model": MODEL,
     }

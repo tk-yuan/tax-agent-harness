@@ -10,6 +10,9 @@
 
 from __future__ import annotations
 
+import threading
+import time
+from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass, field
 from typing import Any
 
@@ -23,10 +26,16 @@ from .tools import ToolRegistry
 # 工具结果超过这个长度就交给 after_tool Hook 处理（落盘 + 只留摘要）
 INLINE_LIMIT = 2000
 
+# 一轮内并发执行工具调用的线程上限
+MAX_PARALLEL_TOOLS = 4
+
 
 @dataclass
 class RunState:
-    """一次运行的可变状态。Hook 与工具共享它。"""
+    """一次运行的可变状态。Hook 与工具共享它。
+
+    带锁：一轮内的多个工具调用会并发执行，共享状态必须能安全写入。
+    """
 
     goal: str = ""
     todo: list[dict] = field(default_factory=list)
@@ -34,6 +43,7 @@ class RunState:
     artifacts: dict[str, str] = field(default_factory=dict)  # 落到虚拟文件系统的产出
     depth: int = 0                                      # 子 Agent 深度
     parent_goal: str | None = None
+    lock: threading.Lock = field(default_factory=threading.Lock, repr=False, compare=False)
 
     def to_dict(self) -> dict:
         return {
@@ -159,8 +169,7 @@ class Agent:
             convo.append(M.assistant(resp["content"], resp["tool_calls"]))
             if resp["content"].strip():
                 last_text = resp["content"].strip()
-            for call in resp["tool_calls"]:
-                convo.append(M.tool_result(call["id"], self._run_tool(call)))
+            convo.extend(self._run_tools(resp["tool_calls"]))
 
         else:
             stop_reason = "max_turns"
@@ -201,7 +210,7 @@ class Agent:
             span["fields"]["chars"] = len(resp["content"])
             return resp
 
-    # —— 内部：一次工具调用（四个 Hook 节点中的两个 + 权限 + 审计）——
+    # —— 内部：一次工具调用（四个 Hook 节点中的两个 + 权限 + 审批 + 缓存 + 重试）——
     def _run_tool(self, call: dict) -> str:
         fn = call.get("function", {})
         name = fn.get("name", "")
@@ -213,31 +222,87 @@ class Agent:
             if self.trace is not None
             else _null_span()
         )
-        with span_ctx:
-            if tool is None:
-                return f"[错误] 未知工具：{name}"
+        t0 = time.perf_counter()
+        with span_ctx as span:
+            text = self._execute_tool(tool, name, args)
+            # 成败写进 span：回归测试要断言「这次运行没出工具错误」，
+            # 没这个字段就只能去翻对话文本，断言很难写。
+            span["fields"]["ok"] = not text.startswith("[")
+            span["fields"]["ms"] = round((time.perf_counter() - t0) * 1000, 1)
+            if text.startswith("["):
+                span["fields"]["outcome"] = text[:60]
+            return text
 
-            ctx = self.hooks.run(
-                "before_tool",
-                {"tool": tool, "name": name, "args": args, "policy": self.policy,
-                 "state": self.state, "trace": self.trace,
-                 "approval_gate": self.approval_gate},
-            )
-            if ctx.get("deny"):
-                return f"[被拒绝] {ctx['deny']}"
-            args = ctx.get("args", args)
+    def _execute_tool(self, tool, name: str, args: dict) -> str:
+        """真正的执行体。返回文本形式的工具结果（错误也以 [..] 开头返回）。"""
+        if tool is None:
+            return f"[错误] 未知工具：{name}"
 
+        ctx = self.hooks.run(
+            "before_tool",
+            {"tool": tool, "name": name, "args": args, "policy": self.policy,
+             "state": self.state, "trace": self.trace,
+             "approval_gate": self.approval_gate},
+        )
+        if ctx.get("deny"):
+            return f"[被拒绝] {ctx['deny']}"
+        args = ctx.get("args", args)
+
+        # 短路：缓存命中直接返回，不再执行。策略由 Hook 决定，循环只认约定。
+        if "short_circuit" in ctx:
+            if self.trace is not None:
+                self.trace.event("cache", f"{name} 命中缓存")
+            return self._stringify(ctx["short_circuit"])
+
+        # 重试策略同样来自 Hook。只在**抛异常**时重试——
+        # 返回错误字符串属于业务失败，重试多少次都一样。
+        max_retry = int(ctx.get("max_retry", 0) or 0)
+        backoff = float(ctx.get("retry_backoff", 0.4) or 0.4)
+        result = None
+        for attempt in range(max_retry + 1):
             try:
                 result = self.registry.call(name, args)
+                break
             except Exception as e:  # noqa: BLE001 —— 工具异常不应中断整个任务
-                return f"[工具错误] {type(e).__name__}: {e}"
+                if attempt >= max_retry:
+                    return f"[工具错误] {type(e).__name__}: {e}（已重试 {attempt} 次）"
+                if self.trace is not None:
+                    self.trace.event("retry", f"{name} 第 {attempt + 1} 次重试",
+                                     error=type(e).__name__)
+                time.sleep(backoff * (2 ** attempt))
 
-            ctx = self.hooks.run(
-                "after_tool",
-                {"tool": tool, "name": name, "args": args, "result": result,
-                 "state": self.state, "trace": self.trace},
-            )
-            return self._stringify(ctx.get("result", result))
+        ctx = self.hooks.run(
+            "after_tool",
+            {"tool": tool, "name": name, "args": args, "result": result,
+             "state": self.state, "trace": self.trace},
+        )
+        return self._stringify(ctx.get("result", result))
+
+    # —— 内部：一轮内的全部工具调用（并发执行）——
+    def _run_tools(self, calls: list[dict]) -> list[dict]:
+        """执行模型本轮发出的所有工具调用，返回对应的 tool 结果消息。
+
+        **为什么并发**：模型一轮可以返回多个 tool_call。它们之间必然没有依赖
+        （有依赖的话模型会在拿到结果后的下一轮再调），所以串行执行纯属浪费——
+        N 个网络往返会线性叠加。并发之后，一轮里的 3 个检索/测算工具
+        只花最慢那一个的时间。
+
+        **为什么结果要保持顺序**：API 是按 tool_call_id 匹配的，理论上乱序也能跑；
+        但上下文里 tool 结果与 assistant 的调用顺序错位，会让模型对不上号，
+        长任务里容易引发混乱。所以用 map（保序）而不是 as_completed。
+
+        **单调用不走线程池**：省掉线程创建开销，也让最常见的路径保持简单。
+        """
+        if not calls:
+            return []
+        if len(calls) == 1:
+            c = calls[0]
+            return [M.tool_result(c["id"], self._run_tool(c))]
+
+        workers = min(MAX_PARALLEL_TOOLS, len(calls))
+        with ThreadPoolExecutor(max_workers=workers) as pool:
+            results = list(pool.map(self._run_tool, calls))
+        return [M.tool_result(c["id"], r) for c, r in zip(calls, results)]
 
     @staticmethod
     def _stringify(value: Any, limit: int = INLINE_LIMIT) -> str:
