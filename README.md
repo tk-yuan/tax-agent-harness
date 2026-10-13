@@ -13,6 +13,26 @@
 
 ---
 
+## 界面预览
+
+启动 `python scripts/serve.py` 后打开 `http://127.0.0.1:8000`：
+
+**实时执行链路 + 人工审批**
+
+![审批面板](docs/screenshots/01-approval-panel.jpg)
+
+> `submit_plan` 触发审批门，执行线程**阻塞**在这里等人批复。
+> 卡片上能看到工具名、参数、触发原因与 300 秒倒计时。不批就不往下走。
+
+**一次完整运行**
+
+![完成态](docs/screenshots/02-completed-run.jpg)
+
+> 左侧是完整的执行链路（model / tool / approval / task 四类 span 带耗时），
+> 右侧是任务清单——T1 到 T5 全部完成，每条都带着它产出的结论摘要。
+
+---
+
 ## 它做什么
 
 输入一家企业的画像（从业人数、资产总额、应纳税所得额、资产购置计划），
@@ -68,6 +88,15 @@ python scripts/serve.py         # 打开 http://127.0.0.1:8000
 浏览器里是控制台：左侧实时事件流（模型调用 / 工具调用 / 子 Agent 委派 / 上下文压缩），
 右侧任务清单、**审批面板**、落盘产出与运行统计。高风险工具会在这里弹出审批请求，
 不批就不往下走。
+
+**Docker 方式**（不用装 Python）：
+
+```bash
+docker compose up --build        # 起服务，打开 http://localhost:8000
+```
+
+密钥从宿主机的 `.env` 读。产出的 `workspace/`、`traces/`、`.cache/` 都挂出来了，
+容器删了东西还在。
 
 | 端点 | 说明 |
 |---|---|

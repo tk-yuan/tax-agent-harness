@@ -1,0 +1,24 @@
+# 一条命令起服务：docker compose up
+#
+# 密钥从宿主机的 .env 读（compose 会自动加载同目录的 .env）。
+# 不要把密钥写进这个文件——它是要提交到仓库的。
+services:
+  harness:
+    build: .
+    image: tax-agent-harness:local
+    container_name: tax-agent-harness
+    ports:
+      - "8000:8000"
+    environment:
+      # 只声明需要透传的变量名，值来自宿主机 .env
+      SILICONFLOW_API_KEY: ${SILICONFLOW_API_KEY:?请先在 .env 里设置 SILICONFLOW_API_KEY}
+      SILICONFLOW_BASE_URL: ${SILICONFLOW_BASE_URL:-https://api.siliconflow.cn/v1}
+      DEEPSEEK_API_KEY: ${DEEPSEEK_API_KEY:?请先在 .env 里设置 DEEPSEEK_API_KEY}
+      DEEPSEEK_BASE_URL: ${DEEPSEEK_BASE_URL:-https://api.deepseek.com}
+      HARNESS_MAX_TURNS: ${HARNESS_MAX_TURNS:-40}
+    volumes:
+      # 挂出来，容器删了产出和索引还在
+      - ./workspace:/app/workspace
+      - ./traces:/app/traces
+      - ./.cache:/app/.cache
+    restart: unless-stopped

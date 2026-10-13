@@ -26,14 +26,16 @@ from typing import Any
 from ..config import TRACE_DIR
 
 SPAN_COLORS = {
-    "model": "#4c6ef5",
-    "tool": "#12b886",
-    "subagent": "#f59f00",
-    "task": "#ae3ec9",
-    "memory": "#0ca678",
-    "fs": "#868e96",
-    "hook": "#e8590c",
-    "run": "#343a40",
+    "model": "#2563eb",
+    "tool": "#059669",
+    "subagent": "#d97706",
+    "task": "#7c3aed",
+    "memory": "#0d9488",
+    "fs": "#94a3b8",
+    "hook": "#ea580c",
+    "cache": "#0891b2",
+    "retry": "#b45309",
+    "run": "#374151",
 }
 
 
@@ -194,18 +196,19 @@ def render_html(payload: dict) -> str:
 <title>Trace {payload['trace_id']}</title>
 <style>
  body{{font-family:-apple-system,"Segoe UI","Microsoft YaHei",sans-serif;margin:0;padding:24px;
-      background:#0f1115;color:#e6e8eb}}
- h1{{font-size:17px;margin:0 0 4px}} .goal{{color:#9aa4b2;font-size:13px;margin-bottom:14px}}
- .pill{{display:inline-block;background:#1b1f27;border:1px solid #2a3039;border-radius:11px;
-       padding:2px 9px;margin:0 5px 5px 0;font-size:12px;color:#adb5bd}}
+      background:#f7f8fa;color:#1f2328}}
+ h1{{font-size:17px;margin:0 0 4px;font-weight:600}}
+ .goal{{color:#6b7280;font-size:13px;margin-bottom:14px}}
+ .pill{{display:inline-block;background:#fff;border:1px solid #e5e7eb;border-radius:11px;
+       padding:2px 10px;margin:0 5px 5px 0;font-size:12px;color:#5b6472}}
  .row{{display:grid;grid-template-columns:230px 200px 1fr;gap:10px;align-items:center;
-      padding:5px 8px;border-bottom:1px solid #191d24;font-size:12.5px}}
+      padding:5px 8px;border-bottom:1px solid #eef0f3;font-size:12.5px;background:#fff}}
  .kind{{display:inline-block;color:#fff;border-radius:4px;padding:1px 6px;font-size:11px;
-       margin-right:7px}}
- .name{{color:#e6e8eb}} .bar{{height:9px;border-radius:4px;display:inline-block;
+       margin-right:7px;font-weight:500}}
+ .name{{color:#1f2328}} .bar{{height:9px;border-radius:4px;display:inline-block;
        vertical-align:middle}}
- .bar-wrap{{position:relative}} .dur{{color:#7a8494;font-size:11px;margin-left:7px}}
- .fields{{color:#6b7480;font-size:11.5px;overflow:hidden;text-overflow:ellipsis;
+ .bar-wrap{{position:relative}} .dur{{color:#9aa1ab;font-size:11px;margin-left:7px}}
+ .fields{{color:#8a919c;font-size:11.5px;overflow:hidden;text-overflow:ellipsis;
          white-space:nowrap}}
 </style>
 <h1>执行链路 · {payload['trace_id']}</h1>

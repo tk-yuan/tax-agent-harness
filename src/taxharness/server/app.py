@@ -191,46 +191,52 @@ def trace_html(trace_id: str) -> HTMLResponse:
 PAGE = """<!doctype html><html lang="zh"><meta charset="utf-8">
 <title>税筹决策 Agent Harness</title>
 <style>
-:root{--bg:#0f1115;--panel:#161a21;--line:#232833;--fg:#e6e8eb;--dim:#8b95a5;
-      --blue:#4c6ef5;--green:#12b886;--orange:#f59f00;--red:#e03131;--purple:#ae3ec9}
+:root{--bg:#f7f8fa;--panel:#ffffff;--line:#e5e7eb;--fg:#1f2328;--dim:#6b7280;
+      --blue:#2563eb;--green:#059669;--orange:#d97706;--red:#dc2626;--purple:#7c3aed;
+      --shadow:0 1px 2px rgba(16,24,40,.06),0 1px 3px rgba(16,24,40,.08)}
 *{box-sizing:border-box}
 body{margin:0;font:13.5px/1.6 -apple-system,"Segoe UI","Microsoft YaHei",sans-serif;
      background:var(--bg);color:var(--fg)}
 header{padding:14px 20px;border-bottom:1px solid var(--line);display:flex;
-       align-items:center;gap:14px;background:var(--panel)}
-h1{font-size:15px;margin:0;font-weight:600}
+       align-items:center;gap:14px;background:var(--panel);box-shadow:var(--shadow)}
+h1{font-size:15px;margin:0;font-weight:600;letter-spacing:.01em}
 #status{margin-left:auto;font-size:12px;color:var(--dim)}
-.wrap{display:grid;grid-template-columns:1fr 380px;height:calc(100vh - 53px)}
+.wrap{display:grid;grid-template-columns:1fr 380px;height:calc(100vh - 57px)}
 .left,.right{overflow:auto;padding:16px 20px}
-.right{border-left:1px solid var(--line);background:#12151b}
+.right{border-left:1px solid var(--line);background:#fbfcfd}
 .bar{display:flex;gap:8px;margin-bottom:14px}
-input{flex:1;background:#0b0e13;border:1px solid var(--line);border-radius:7px;
-      padding:9px 12px;color:var(--fg);font-size:13px}
-input:focus{outline:none;border-color:var(--blue)}
-button{background:var(--blue);border:0;border-radius:7px;padding:9px 18px;color:#fff;
-       font-size:13px;cursor:pointer}
-button:hover{filter:brightness(1.12)} button:disabled{opacity:.45;cursor:default}
-.sec{font-size:11.5px;letter-spacing:.08em;color:var(--dim);text-transform:uppercase;
-     margin:18px 0 8px}
-.ev{display:grid;grid-template-columns:66px 84px 1fr;gap:9px;align-items:baseline;
-    padding:5px 7px;border-radius:6px;font-size:12.5px}
-.ev:hover{background:#171b23}
-.t{color:#59616e;font-variant-numeric:tabular-nums;font-size:11.5px}
-.k{border-radius:4px;padding:1px 6px;font-size:11px;color:#fff;text-align:center}
+input{flex:1;background:var(--panel);border:1px solid var(--line);border-radius:8px;
+      padding:9px 12px;color:var(--fg);font-size:13px;box-shadow:var(--shadow)}
+input:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.12)}
+button{background:var(--blue);border:0;border-radius:8px;padding:9px 18px;color:#fff;
+       font-size:13px;font-weight:500;cursor:pointer;box-shadow:var(--shadow)}
+button:hover{filter:brightness(1.08)} button:disabled{opacity:.45;cursor:default}
+.sec{font-size:11.5px;letter-spacing:.06em;color:var(--dim);text-transform:uppercase;
+     font-weight:600;margin:18px 0 8px}
+.ev{display:grid;grid-template-columns:66px 84px minmax(0,1fr);gap:9px;align-items:baseline;
+    padding:5px 8px;border-radius:6px;font-size:12.5px;overflow:hidden}
+.ev:hover{background:#f1f3f6}
+.t{color:#9aa1ab;font-variant-numeric:tabular-nums;font-size:11.5px}
+.k{border-radius:4px;padding:1px 6px;font-size:11px;color:#fff;text-align:center;
+   font-weight:500}
 .k-model{background:var(--blue)} .k-tool{background:var(--green)}
 .k-subagent{background:var(--orange)} .k-task{background:var(--purple)}
-.k-context{background:#0ca678} .k-memory{background:#0ca678} .k-fs{background:#6b7480}
-.k-approval{background:var(--red)} .k-goal{background:#e8590c}
-.d{color:var(--dim);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.ans{background:#12151b;border:1px solid var(--line);border-radius:9px;padding:13px 15px;
-     white-space:pre-wrap;font-size:12.5px;max-height:340px;overflow:auto}
-.card{background:#12151b;border:1px solid var(--line);border-radius:9px;padding:11px 13px;
-      margin-bottom:9px;font-size:12.5px}
-.card.warn{border-color:#5c3b12;background:#241a09}
+.k-context{background:#0d9488} .k-memory{background:#0d9488} .k-fs{background:#94a3b8}
+.k-approval{background:var(--red)} .k-goal{background:#ea580c}
+.k-cache{background:#0891b2} .k-retry{background:#b45309}
+/* min-width:0 是关键：grid 子项默认 min-width:auto，长内容会把列撑开、
+   整个列表出现横向滚动条。这一行是修那个的。 */
+.d{color:#3f4652;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ans{background:var(--panel);border:1px solid var(--line);border-radius:10px;
+     padding:14px 16px;white-space:pre-wrap;font-size:12.5px;max-height:340px;
+     overflow:auto;box-shadow:var(--shadow);line-height:1.7}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;
+      padding:11px 13px;margin-bottom:9px;font-size:12.5px;box-shadow:var(--shadow)}
+.card.warn{border-color:#fcd9a5;background:#fffbf3}
 .card b{color:var(--orange)}
 .mono{font-family:ui-monospace,Consolas,monospace;font-size:11.5px;color:var(--dim)}
-.pill{display:inline-block;background:#1b1f27;border:1px solid var(--line);border-radius:11px;
-      padding:2px 9px;margin:0 5px 5px 0;font-size:11.5px;color:#adb5bd}
+.pill{display:inline-block;background:#f1f3f6;border:1px solid var(--line);border-radius:11px;
+      padding:2px 10px;margin:0 5px 5px 0;font-size:11.5px;color:#5b6472}
 .ok{color:var(--green)} .no{color:var(--red)}
 .pending{color:var(--orange)}
 </style>
@@ -266,7 +272,9 @@ button:hover{filter:brightness(1.12)} button:disabled{opacity:.45;cursor:default
 </div>
 <script>
 const $=id=>document.getElementById(id);
-let es=null, t0=0;
+// t0 必须初始化成当前时间：页面加载时会先拉一次 /tools 并写一条事件，
+// 那时若 t0 还是 0，时间戳会显示成 17 亿秒这种荒唐值。
+let es=null, t0=Date.now();
 
 function meta(d){
   $('meta').textContent = `工具 ${d.tools.length} · 技能 ${d.skills.length} · `
@@ -293,7 +301,8 @@ function approval(req){
     +`<div>${req.reason}</div><div class="mono">${req.timeout_sec}s 内未批复将自动拒绝</div>`
     +`<div style="margin-top:8px;display:flex;gap:8px">`
     +`<button onclick="decide('${req.id}',true)">批准</button>`
-    +`<button style="background:#3a4048" onclick="decide('${req.id}',false)">拒绝</button></div>`;
+    +`<button style="background:#fff;color:#dc2626;border:1px solid #f3c9c9" `
+    +`onclick="decide('${req.id}',false)">拒绝</button></div>`;
   const box=$('approvals'); if(box.querySelector('.mono')) box.innerHTML='';
   box.appendChild(d);
 }

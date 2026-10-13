@@ -1,0 +1,16 @@
+# 这些不进镜像：本地状态、密钥、运行产物
+.git
+.gitignore
+.cache
+.env
+.env.example
+traces
+workspace
+docs/screenshots
+__pycache__
+*.pyc
+.pytest_cache
+.vscode
+.idea
+regression
+tests
