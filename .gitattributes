@@ -1,2 +1,12 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+# 统一按 LF 存进仓库。本机是 Windows、CI 跑 Linux，行尾差异不该影响 CI，
+# 也不该让每次 git add 都刷一屏 "LF will be replaced by CRLF" 的告警。
+* text=auto eol=lf
+
+# 二进制文件别做行尾转换
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.ico binary
+*.pdf binary
+*.npy binary
+*.db binary

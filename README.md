@@ -98,12 +98,22 @@ docker compose up --build        # 起服务，打开 http://localhost:8000
 密钥从宿主机的 `.env` 读。产出的 `workspace/`、`traces/`、`.cache/` 都挂出来了，
 容器删了东西还在。
 
+**跑完可以直接追问**——输入框会清空并切成「追问」，上方提示「当前：追问中 · 会话 xxx · 已进行 N 轮」。
+Agent 带着前几轮的历史继续，不会从头再来。点「新对话」另起一条。
+
+**关于多轮**：一次对话 = 一份持续增长的消息历史。追问时把历史带上，主循环接着往下走。
+刻意**不跨轮延续**的两样：任务清单（追问往往是新问题，沿用上一轮的清单会让人困惑）
+和工具缓存（参数变了，旧结果本就不该命中）。
+会话存在内存里，服务重启就没了——要持久化，把 `RunManager._conversations` 换成
+`storage/store.py` 那个 KV 即可，接口已经在那儿了。
+
 | 端点 | 说明 |
 |---|---|
-| `GET /` | 单页控制台 |
-| `POST /runs` | 提交任务，返回 `run_id` |
+| `GET /` | 单页控制台（**支持多轮追问**） |
+| `POST /runs` | 提交任务；带 `conversation_id` 即为追问，返回 `run_id` |
 | `GET /runs/{id}/events` | SSE 实时事件流 |
 | `POST /runs/{id}/approvals/{aid}` | 提交审批决定 |
+| `GET /conversations` | 会话列表（多轮对话的状态） |
 | `GET /checkpoints` / `POST /runs/{id}/resume` | 断点列表 / 断点续跑 |
 | `GET /tools` | 工具池（含哪些需要审批） |
 | `GET /traces/{trace_id}` | 离线链路时间线 |
